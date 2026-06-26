@@ -259,50 +259,78 @@ a{color:inherit;text-decoration:none}
 .splash-logo svg,.splash-logo img{height:46px;width:auto;filter:brightness(0) invert(1)}
 .splash-word{font-weight:700;font-size:34px;letter-spacing:-.02em;color:#fff}
 @keyframes splashpop{0%{opacity:0;transform:scale(.9)}100%{opacity:1;transform:none}}
-/* onboarding */
-.onboard{position:fixed;inset:0;z-index:200;background:var(--bg);display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto}
+/* onboarding — centered modal on dark scrim */
+.onboard{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;overflow-y:auto;
+  background:radial-gradient(130% 120% at 50% -10%,rgba(26,28,34,.55) 0%,rgba(8,9,12,.74) 70%);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px)}
 .onboard.show{display:flex}
-.ob-card{width:100%;max-width:436px;background:var(--surface-solid);border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh-pop);padding:26px 26px 28px;position:relative;animation:obin .4s var(--ease) both}
-@keyframes obin{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:none}}
-.ob-back{position:absolute;top:20px;left:20px;z-index:3;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;color:var(--txt-2);background:var(--surface);border:1px solid var(--line);cursor:pointer}
-.ob-back svg{width:20px;height:20px}
-.ob-dots{display:flex;gap:6px;justify-content:center;margin-bottom:22px}
-.ob-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);transition:width .3s var(--ease),background .3s}
-.ob-dot.on{width:22px;background:var(--accent-ink)}
-.ob-h{font-size:23px;font-weight:680;letter-spacing:-.02em;text-align:center;line-height:1.2}
-.ob-sub{font-size:13.5px;color:var(--txt-2);text-align:center;margin-top:9px;line-height:1.55}
-.ob-icon{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;margin:4px auto 18px;background:var(--accent-soft);color:var(--accent-ink)}
-.ob-icon svg{width:29px;height:29px}
-.ob-icon.ok{background:rgba(15,163,113,.14);color:#0fa371}
-.ob-field{margin-top:14px}
-.ob-field label{display:block;font-size:12.5px;font-weight:600;color:var(--txt-2);margin-bottom:6px}
-.ob-list{display:flex;flex-direction:column;gap:13px;margin:22px 2px 4px}
+.ob-card{width:100%;max-width:452px;background:var(--surface-solid);border-radius:26px;box-shadow:0 36px 90px -24px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);padding:34px 32px 32px;position:relative;animation:obin .42s var(--ease) both;margin:auto}
+.ob-card.wide{max-width:564px}
+@keyframes obin{0%{opacity:0;transform:translateY(16px) scale(.98)}100%{opacity:1;transform:none}}
+.ob-back{position:absolute;top:24px;left:22px;z-index:3;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;color:var(--txt-1);background:transparent;border:none;cursor:pointer;transition:background .15s}
+.ob-back:hover{background:var(--surface-3)}
+.ob-back svg{width:25px;height:25px}
+.ob-illo{display:block;margin:6px auto 22px;width:188px;height:auto}
+.ob-illo.sm{width:150px;margin:6px auto 16px}
+.ob-h{font-size:25px;font-weight:720;letter-spacing:-.025em;text-align:center;line-height:1.16}
+.ob-sub{font-size:13.5px;color:var(--txt-2);text-align:center;margin-top:11px;line-height:1.58}
+.ob-btn{margin-top:24px}
 .ob-btn svg{width:18px;height:18px}
-.ob-splitprev{border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:18px 0 4px;background:var(--surface)}
-.ob-sp-row{display:flex;align-items:center;justify-content:space-between;font-size:13.5px;padding:5px 0}
-.ob-sp-l{display:flex;align-items:center;gap:9px;color:var(--txt-2)}
-.ob-sp-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
-.ob-sp-pct{font-weight:600;font-variant-numeric:tabular-nums}
-.ob-sp-foot{font-size:11.5px;color:var(--txt-3);margin-top:8px;padding-top:9px;border-top:1px solid var(--line)}
-.ob-li{display:flex;gap:12px;align-items:flex-start}
-.ob-li .obic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);flex-shrink:0}
-.ob-li .obic.ok{background:rgba(15,163,113,.14);color:#0fa371}
-.ob-li .obic svg{width:19px;height:19px}
-.ob-li b{font-size:13.5px;font-weight:600;display:block}
-.ob-li i{font-size:12.5px;color:var(--txt-3);font-style:normal;line-height:1.4}
-.ob-bank{display:flex;align-items:center;gap:12px;width:100%;padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--surface);cursor:pointer;margin-top:9px;text-align:left;transition:border-color .2s,background .2s}
-.ob-bank:hover{border-color:var(--accent-ink);background:var(--accent-soft)}
-.ob-bank .obbk{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--surface-3);color:var(--txt-2);flex-shrink:0;font-weight:700;font-size:13px}
-.ob-bank b{font-size:13.5px;font-weight:600}
-.ob-btn{margin-top:20px}
-.ob-note{display:flex;align-items:center;justify-content:center;gap:7px;font-size:11.5px;color:var(--txt-3);margin-top:14px}
-.ob-note svg{width:14px;height:14px}
-.ob-connected{display:flex;align-items:center;gap:11px;padding:13px 14px;border:1px solid var(--accent-ink);background:var(--accent-soft);border-radius:14px;margin-top:16px}
-.ob-connected .obic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:var(--accent-ink);color:#fff;flex-shrink:0}
-.ob-connected .obic svg{width:19px;height:19px}
-.ob-connected b{font-size:13.5px;font-weight:600;display:block}
-.ob-connected i{font-size:12px;color:var(--txt-2);font-style:normal}
-@media(max-width:560px){.onboard{padding:0}.ob-card{max-width:100%;min-height:100vh;border:none;border-radius:0;display:flex;flex-direction:column;justify-content:center;padding:28px 22px calc(env(safe-area-inset-bottom) + 28px)}}
+.ob-btn.btn[disabled]{opacity:.45;cursor:not-allowed;filter:saturate(.6)}
+.ob-field{margin-top:15px}
+.ob-field label{display:block;font-size:13px;font-weight:620;color:var(--txt-1);margin-bottom:7px}
+.ob-grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.ob-grid3{display:grid;grid-template-columns:1.5fr .85fr .85fr;gap:11px}
+.ob-sel{width:100%;height:48px;border:1px solid var(--line-2);border-radius:13px;background:var(--surface);color:var(--txt-1);font-size:15px;padding:0 38px 0 14px;font-family:inherit;-webkit-appearance:none;appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 13px center}
+.ob-note{display:flex;align-items:center;justify-content:center;gap:7px;font-size:11.5px;color:var(--txt-3);margin-top:18px;text-align:center}
+.ob-note svg{width:14px;height:14px;flex-shrink:0}
+/* split preview */
+.ob-splitprev{border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin:20px 0 4px;background:var(--surface)}
+.ob-sp-row{display:flex;align-items:center;justify-content:space-between;font-size:14px;padding:6px 0}
+.ob-sp-l{display:flex;align-items:center;gap:10px;color:var(--txt-1)}
+.ob-sp-dot{width:11px;height:11px;border-radius:4px;flex-shrink:0}
+.ob-sp-pct{font-weight:660;font-variant-numeric:tabular-nums}
+.ob-sp-foot{font-size:12px;color:var(--txt-3);margin-top:9px;padding-top:10px;border-top:1px solid var(--line)}
+/* plaid */
+.ob-plaidhead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 22px}
+.ob-pmark{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.04em;font-size:15px;color:var(--txt-1)}
+.ob-pmark svg{width:26px;height:26px}
+.ob-secured{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--txt-3)}
+.ob-secured svg{width:13px;height:13px}
+.ob-acct{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:14px 16px;border:1.5px solid var(--line);border-radius:16px;background:var(--surface-solid);cursor:pointer;margin-top:12px;transition:border-color .15s,box-shadow .15s}
+.ob-acct:hover{border-color:var(--line-2)}
+.ob-acct.on{border-color:var(--txt-1);box-shadow:0 0 0 1px var(--txt-1)}
+.ob-acct .blogo{width:46px;height:46px;border-radius:11px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:12px;letter-spacing:.02em;flex-shrink:0}
+.ob-acct .ainfo{flex:1;min-width:0}
+.ob-acct .aname{font-size:14.5px;font-weight:680;line-height:1.25}
+.ob-acct .asub{font-size:12.5px;color:var(--txt-3);margin-top:2px}
+.ob-acct .abal{text-align:right;flex-shrink:0}
+.ob-acct .abal b{font-size:14.5px;font-weight:680;font-variant-numeric:tabular-nums}
+.ob-acct .abal i{display:block;font-size:11.5px;color:var(--txt-3);font-style:normal;margin-top:2px}
+.ob-tick{width:24px;height:24px;border-radius:7px;border:1.5px solid var(--line-2);flex-shrink:0;display:grid;place-items:center;color:#fff;transition:background .15s,border-color .15s}
+.ob-tick.rd{border-radius:50%}
+.ob-acct.on .ob-tick{background:var(--txt-1);border-color:var(--txt-1)}
+.ob-tick svg{width:15px;height:15px;opacity:0;transition:opacity .12s}
+.ob-acct.on .ob-tick svg{opacity:1}
+.ob-acct.on .ob-tick.rd::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.ob-rtp{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;font-weight:600;color:#0fa371;background:rgba(15,163,113,.13);padding:2px 7px;border-radius:999px;margin-left:7px;vertical-align:middle}
+.ob-plaidfoot{display:flex;justify-content:flex-end;margin-top:24px}
+.ob-plaidfoot .btn{width:auto;padding:0 22px}
+@media(max-width:560px){.onboard{padding:14px}.ob-card{padding:30px 22px 26px;border-radius:24px}.ob-h{font-size:23px}.ob-grid3{grid-template-columns:1fr;gap:13px}.ob-plaidfoot .btn{width:100%}}
+/* dashboard tour */
+.ob-tour{position:fixed;inset:0;z-index:240;display:none}
+.ob-tour.show{display:block}
+.ob-spot{position:absolute;border-radius:18px;box-shadow:0 0 0 9999px rgba(8,9,12,.66);transition:all .32s var(--ease);pointer-events:none}
+.ob-tip{position:absolute;width:min(326px,calc(100vw - 32px));background:var(--surface-solid);border-radius:18px;box-shadow:0 24px 60px -16px rgba(0,0,0,.5);padding:18px 18px 16px;pointer-events:auto;animation:obin .3s var(--ease) both}
+.ob-tip h4{font-size:16px;font-weight:700;letter-spacing:-.01em}
+.ob-tip p{font-size:13px;color:var(--txt-2);line-height:1.55;margin-top:7px}
+.ob-tip-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.ob-tip-dots{display:flex;gap:6px}
+.ob-tip-dots span{width:6px;height:6px;border-radius:50%;background:var(--line-2)}
+.ob-tip-dots span.on{width:18px;background:var(--accent-ink);border-radius:99px}
+.ob-tip-btns{display:flex;align-items:center;gap:6px}
+.ob-tip-skip{font-size:12.5px;color:var(--txt-3);background:none;border:none;cursor:pointer;padding:8px 10px}
+.ob-tip-next{font-size:13px;font-weight:620;color:#fff;background:var(--accent);border:none;border-radius:10px;padding:9px 16px;cursor:pointer}
 /* pre-approved card (refined) */
 .pa-card{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--surface);margin-top:16px}
 .pa-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
@@ -968,13 +996,8 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   </div>
 </div>
 
-<div class="onboard" id="onboarding">
-  <div class="ob-card">
-    <button class="ob-back" id="obBack" style="display:none" aria-label="Back"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="ob-dots" id="obDots"></div>
-    <div class="ob-body" id="obFlow"></div>
-  </div>
-</div>
+<div class="onboard" id="onboarding"><div class="ob-card" id="obCard"></div></div>
+<div class="ob-tour" id="obTour" aria-hidden="true"><div class="ob-spot" id="obSpot"></div><div class="ob-tip" id="obTip"></div></div>
 
 <nav class="nav" id="nav">
   <span class="logo" data-logo></span>
@@ -1840,7 +1863,7 @@ function restoreActive(){newUserMode=false;commTotal=_SNAP.ct;advAvail=_SNAP.av;
   const sw=$('#autoSwitch');if(sw)sw.classList.remove('on');
   obSetIdentity('Bryan Haskins');obRefreshAll();}
 function enterNewUserState(bank,buckets,autoOn){newUserMode=true;commTotal=0;advAvail=0;advUsed=0;advLimit=0;preApprovedRequested=true;
-  commissions.length=0;activity.length=0;accounts.length=0;if(bank)accounts.push(bank);
+  commissions.length=0;activity.length=0;accounts.length=0;(Array.isArray(bank)?bank:(bank?[bank]:[])).forEach(b=>accounts.push(b));
   dist.length=0;if(buckets&&buckets.length)buckets.forEach(b=>dist.push(b));
   autoDist=!!autoOn;
   const sw=$('#autoSwitch');if(sw)sw.classList.toggle('on',autoDist);
@@ -1848,76 +1871,139 @@ function enterNewUserState(bank,buckets,autoOn){newUserMode=true;commTotal=0;adv
   obSetIdentity(obName);obRefreshAll();}
 
 const obEsc=s=>String(s==null?'':s).replace(/"/g,'&quot;');
-const OB_BOLT='<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>';
-const OB_SPLIT='<svg viewBox="0 0 24 24" fill="none"><path d="M5 7h9l-2-2m2 2l-2 2M19 17h-9l2-2m-2 2l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const OB_ADV='<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.4" stroke="currentColor" stroke-width="1.7"/></svg>';
-const OB_SHIELD='<svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const OB_LOCK='<svg viewBox="0 0 24 24" fill="none"><path d="M6 11V8a6 6 0 0112 0v3M5 11h14v9H5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
-const OB_BANKIC='<svg viewBox="0 0 24 24" fill="none"><path d="M4 10l8-5 8 5M5 10v8m14-8v8M9 10v8m6-8v8M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const OB_BANKS=[['Chase','CH','0142'],['Bank of America','BoA','7781'],['Wells Fargo','WF','3390'],['Ally Bank','Al','1234'],['Marcus','Ms','9012']];
 const OB_ARROW='<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const OB_LOCK='<svg viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0110 0v3M6 11h12v9H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
+const OB_CHK='<svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const OB_PMARK='<svg viewBox="0 0 36 36" fill="#111"><rect x="15.5" y="2" width="6" height="6" rx="1.4" transform="rotate(45 18.5 5)"/><rect x="4" y="13.5" width="6" height="6" rx="1.4" transform="rotate(45 7 16.5)"/><rect x="27" y="13.5" width="6" height="6" rx="1.4" transform="rotate(45 30 16.5)"/><rect x="15.5" y="25" width="6" height="6" rx="1.4" transform="rotate(45 18.5 28)"/><rect x="14" y="12" width="8" height="8" rx="1.6"/></svg>';
+/* line-art wallet + coin illustration */
+function OB_WALLET(sm){return '<svg class="ob-illo'+(sm?' sm':'')+'" viewBox="0 0 224 196" fill="none" xmlns="http://www.w3.org/2000/svg">'
+  +'<ellipse cx="112" cy="186" rx="66" ry="6.5" fill="#111" opacity=".88"/>'
+  +'<g stroke="#111" stroke-width="2.4" stroke-linecap="round"><path d="M112 8v13"/><path d="M88 16l6 11"/><path d="M136 16l-6 11"/></g>'
+  +'<circle cx="112" cy="52" r="26" fill="#fff" stroke="#111" stroke-width="2.6"/>'
+  +'<text x="112" y="63" text-anchor="middle" font-family="Geist,Inter,sans-serif" font-size="30" font-weight="800" fill="var(--accent)">$</text>'
+  +'<g transform="rotate(-8 78 118)"><rect x="50" y="84" width="56" height="74" rx="5" fill="#fff" stroke="#111" stroke-width="2.4"/><path d="M92 84v12h12" fill="#fff" stroke="#111" stroke-width="2.4" stroke-linejoin="round"/><g stroke="#111" stroke-width="2.2" stroke-linecap="round" opacity=".55"><path d="M60 110h32"/><path d="M60 120h32"/><path d="M60 130h22"/></g></g>'
+  +'<g transform="rotate(9 150 116)"><rect x="120" y="80" width="62" height="76" rx="9" fill="#fff" stroke="#111" stroke-width="2.4"/><rect x="129" y="104" width="15" height="12" rx="2.6" fill="#fff" stroke="#111" stroke-width="2.2"/></g>'
+  +'<rect x="38" y="116" width="148" height="62" rx="15" fill="#fff" stroke="#111" stroke-width="2.8"/>'
+  +'<path d="M38 134h148" stroke="#111" stroke-width="2.4"/>'
+  +'<rect x="150" y="140" width="34" height="24" rx="7" fill="#fff" stroke="#111" stroke-width="2.6"/><circle cx="167" cy="152" r="3.6" fill="#111"/>'
+  +'</svg>';}
+const US_STATES=['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'];
+const OB_PLAID_ACCTS=[
+  {bank:'Chase Total Checking',inst:'Chase',type:'Checking',last4:'7890',bal:'$12,480.30',rtp:true,tag:'CHASE',color:'#117ACA'},
+  {bank:'SVB Business Checking',inst:'Silicon Valley Bank',type:'Checking',last4:'4321',bal:'$48,210.00',rtp:true,tag:'SVB',color:'#0A2540'},
+  {bank:'Wells Fargo Everyday Checking',inst:'Wells Fargo',type:'Checking',last4:'1188',bal:'$6,210.55',rtp:false,tag:'WF',color:'#D71E28'}
+];
 const OB_DEFAULT_DIST=[{name:'Savings',pct:40,color:'#0fa371',icon:'savings'},{name:'Taxes',pct:30,color:'#1f9bf0',icon:'tax'},{name:'Spending',pct:30,color:'#8b5cf6',icon:'wallet'}];
-let obStep=0,obName='',obEmail='',obBank=null,obPlaidOpen=false,obAutoOn=false;
-const OB_TOTAL=6;
-function obLi(ic,t,s,ok){return '<div class="ob-li"><span class="obic'+(ok?' ok':'')+'">'+ic+'</span><div><b>'+t+'</b><i>'+s+'</i></div></div>';}
-function startOnboarding(name,dest){obName=name||'';obEmail=dest||'';obBank=null;obPlaidOpen=false;obAutoOn=false;obStep=0;hideAuth();$('#onboarding').classList.add('show');document.body.style.overflow='hidden';renderOnboarding();}
-function renderOnboarding(){
-  $('#obDots').innerHTML=Array.from({length:OB_TOTAL},(_,i)=>'<span class="ob-dot'+(i===obStep?' on':'')+'"></span>').join('');
-  $('#obBack').style.display=(obStep>0)?'grid':'none';
-  const f=$('#obFlow');const first=(String(obName).trim().split(/\s+/)[0])||'there';
-  if(obStep===0){
-    f.innerHTML='<div class="ob-icon">'+OB_BOLT+'</div><h2 class="ob-h">Get paid the day you close.</h2><p class="ob-sub">Set up your Tongo wallet in about a minute — verify your identity, connect a bank, done.</p>'
-      +'<button class="btn btn-primary block ob-btn" data-next>Set Up My Account '+OB_ARROW+'</button>';
-  } else if(obStep===1){
-    f.innerHTML='<h2 class="ob-h">Confirm your details</h2><p class="ob-sub">We’ll use this to set up your account.</p>'
-      +'<div class="ob-field"><label>Full name</label><input class="auth-input" id="obFullName" value="'+obEsc(obName)+'" placeholder="Your name"></div>'
-      +'<div class="ob-field"><label>Phone or email</label><input class="auth-input" id="obContact" value="'+obEsc(obEmail)+'" readonly></div>'
-      +'<div class="ob-field"><label>Brokerage</label><input class="auth-input" id="obBrokerage" value="Fathom Realty"></div>'
-      +'<button class="btn btn-primary block ob-btn" data-next>Continue</button>';
-  } else if(obStep===2){
-    f.innerHTML='<div class="ob-icon">'+OB_SHIELD+'</div><h2 class="ob-h">Verify your identity</h2><p class="ob-sub">Required to receive funds. Bank-grade &amp; encrypted.</p>'
-      +'<div class="ob-field"><label>Legal name</label><input class="auth-input" id="obLegal" value="'+obEsc(obName)+'" placeholder="Full legal name"></div>'
-      +'<div class="ob-field"><label>Date of birth</label><input class="auth-input" id="obDob" placeholder="MM / DD / YYYY"></div>'
-      +'<div class="ob-field"><label>Last 4 of SSN</label><input class="auth-input" id="obSsn" inputmode="numeric" maxlength="4" placeholder="••••"></div>'
-      +'<button class="btn btn-primary block ob-btn" id="obVerify">Verify my identity</button>'
-      +'<div class="ob-note">'+OB_LOCK+'Secured · we only ask for the last 4 digits</div>';
-  } else if(obStep===3){
-    if(obBank){
-      f.innerHTML='<div class="ob-icon ok">'+OB_BANKIC+'</div><h2 class="ob-h">Bank connected</h2><p class="ob-sub">Commissions and advances will land here.</p>'
-        +'<div class="ob-connected"><span class="obic">'+ICON_CHECK+'</span><div><b>'+obBank.nick+'</b><i>••••'+obBank.last4+' · '+(obBank.rtp_eligible?'Instant eligible':'ACH only')+'</i></div></div>'
-        +'<button class="btn btn-primary block ob-btn" data-next>Continue</button>';
-    } else if(obPlaidOpen){
-      f.innerHTML='<h2 class="ob-h">Choose your bank</h2><p class="ob-sub">Securely connected via Plaid.</p>'
-        +OB_BANKS.map((b,i)=>'<button class="ob-bank" data-bank="'+i+'"><span class="obbk">'+b[1]+'</span><b>'+b[0]+'</b></button>').join('')
-        +'<div class="ob-note">'+OB_LOCK+'Bank-level encryption · powered by Plaid</div>';
-    } else {
-      f.innerHTML='<div class="ob-icon">'+OB_BANKIC+'</div><h2 class="ob-h">Connect your bank</h2><p class="ob-sub">Tongo uses Plaid to securely connect at least one account so you can receive commissions and advances.</p>'
-        +'<button class="btn btn-primary block ob-btn" id="obPlaid">Continue with Plaid</button>'
-        +'<div class="ob-note">'+OB_LOCK+'We never see your bank login</div>';
-    }
-  } else if(obStep===4){
-    const acctName=obBank?obBank.nick:'your account';
-    f.innerHTML='<div class="ob-icon">'+OB_SPLIT+'</div><h2 class="ob-h">Auto-split your commissions</h2><p class="ob-sub">Optional — automatically divide every commission the moment it arrives. You can change this anytime in Bank Settings.</p>'
+function obBrand(){return ((typeof current!=='undefined'&&current&&current.name)||'Tongo').split(/\s+/)[0];}
+let obName='',obEmail='',obAutoOn=false,obSel=[],obBanks=[],obPrimary=0,obKey='welcome',obStack=[],obCardAdded=false;
+const obCardEl=()=>$('#obCard');
+function startOnboarding(name,dest){obName=name||'';obEmail=dest||'';obAutoOn=false;obSel=[];obBanks=[];obPrimary=0;obCardAdded=false;obStack=[];obKey='welcome';hideAuth();$('#onboarding').classList.add('show');document.body.style.overflow='hidden';obRender();}
+function obGo(k){obStack.push(obKey);obKey=k;obRender();}
+function obBack(){if(obStack.length){obKey=obStack.pop();obRender();}}
+function obBlogo(a){return '<span class="blogo" style="background:'+a.color+'">'+a.tag+'</span>';}
+function obAfterPrimary(){const p=obBanks[obPrimary];if(p&&!p.rtp_eligible){obGo('card');}else{obGo('split');}}
+function obRender(){
+  const c=obCardEl();const first=(String(obName).trim().split(/\s+/)[0])||'there';
+  const backBtn='<button class="ob-back" id="obBack" aria-label="Back"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>';
+  c.className='ob-card';
+  if(obKey==='welcome'){
+    c.innerHTML=OB_WALLET()+'<h2 class="ob-h">Welcome to your<br>'+obBrand()+' Wallet.</h2><p class="ob-sub">Set up your account in about a minute — verify your identity and connect a bank.</p>'
+      +'<button class="btn btn-primary block ob-btn" id="obStart">Set Up Your Account '+OB_ARROW+'</button>';
+    $('#obStart').addEventListener('click',()=>obGo('verify'));
+  } else if(obKey==='verify'){
+    c.className='ob-card wide';
+    const nm=String(obName).trim().split(/\s+/);
+    c.innerHTML=backBtn+'<h2 class="ob-h" style="margin-top:8px">Verify your identity</h2><p class="ob-sub">We’re required to verify your identity to send you payments. Your information is encrypted.</p>'
+      +'<div class="ob-grid2" style="margin-top:22px"><div class="ob-field" style="margin:0"><label>Legal first name</label><input class="auth-input" id="vF" value="'+obEsc(nm[0]||'')+'" placeholder="Name"></div><div class="ob-field" style="margin:0"><label>Last name</label><input class="auth-input" id="vL" value="'+obEsc(nm.slice(1).join(' '))+'" placeholder="Last name"></div></div>'
+      +'<div class="ob-grid2"><div class="ob-field" style="margin:0"><label>Date of birth</label><input class="auth-input" id="vD" inputmode="numeric" placeholder="MM/DD/YYYY"></div><div class="ob-field" style="margin:0"><label>Social Security Number</label><input class="auth-input" id="vS" inputmode="numeric" maxlength="4" placeholder="•••-••-0000"></div></div>'
+      +'<div class="ob-field"><label>Street address</label><input class="auth-input" id="vA" placeholder="Street Address"></div>'
+      +'<div class="ob-grid3"><div class="ob-field" style="margin:0"><label>City</label><input class="auth-input" id="vC" placeholder="City"></div><div class="ob-field" style="margin:0"><label>State</label><select class="ob-sel" id="vSt"><option value="">–</option>'+US_STATES.map(s=>'<option>'+s+'</option>').join('')+'</select></div><div class="ob-field" style="margin:0"><label>ZIP</label><input class="auth-input" id="vZ" inputmode="numeric" maxlength="5" placeholder="00000"></div></div>'
+      +'<button class="btn btn-primary block ob-btn" id="vGo" disabled>Continue '+OB_ARROW+'</button>'
+      +'<div class="ob-note">'+OB_LOCK+'Your information is encrypted and securely verified.</div>';
+    const ids=['vF','vL','vD','vS','vA','vC','vSt','vZ'];const go=$('#vGo');
+    function chk(){const v=id=>($('#'+id).value||'').trim();const ok=v('vF')&&v('vL')&&v('vD').length>=8&&v('vS').length===4&&v('vA')&&v('vC')&&v('vSt')&&v('vZ').length>=5;go.disabled=!ok;return ok;}
+    ids.forEach(id=>{const el=$('#'+id);el.addEventListener('input',chk);el.addEventListener('change',chk);});
+    $('#vS').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,4);});
+    $('#vZ').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,5);});
+    $('#vD').addEventListener('input',function(){let x=this.value.replace(/\D/g,'').slice(0,8);if(x.length>=5)x=x.slice(0,2)+'/'+x.slice(2,4)+'/'+x.slice(4);else if(x.length>=3)x=x.slice(0,2)+'/'+x.slice(2);this.value=x;chk();});
+    $('#obBack').addEventListener('click',obBack);
+    go.addEventListener('click',function(){if(!chk())return;obName=(($('#vF').value||'')+' '+($('#vL').value||'')).trim();withLoading(this,1100,()=>obGo('plaid'));});
+  } else if(obKey==='plaid'){
+    c.className='ob-card wide';
+    const rows=OB_PLAID_ACCTS.map((a,i)=>'<button class="ob-acct'+(obSel.includes(i)?' on':'')+'" data-acct="'+i+'">'+obBlogo(a)+'<div class="ainfo"><div class="aname">'+a.bank+(a.rtp?' <span class="ob-rtp">'+OB_CHK+' Instant</span>':'')+'</div><div class="asub">'+a.inst+' · '+a.type+' ••••'+a.last4+'</div></div><div class="abal"><b>'+a.bal+'</b><i>Available</i></div><span class="ob-tick">'+OB_CHK+'</span></button>').join('');
+    c.innerHTML=backBtn+'<div class="ob-plaidhead"><span class="ob-pmark">'+OB_PMARK+'PLAID</span><span class="ob-secured">'+OB_LOCK+'Secured by Plaid</span></div>'
+      +'<h2 class="ob-h" style="text-align:left">Select your accounts</h2><p class="ob-sub" style="text-align:left">Choose one or more accounts to connect to '+obBrand()+'.</p>'
+      +rows+'<div class="ob-plaidfoot"><button class="btn btn-primary" id="plGo"'+(obSel.length?'':' disabled')+'>Connect ('+obSel.length+') '+OB_ARROW+'</button></div>';
+    $('#obBack').addEventListener('click',obBack);
+    c.querySelectorAll('[data-acct]').forEach(b=>b.addEventListener('click',function(){const i=+b.dataset.acct;const j=obSel.indexOf(i);if(j>=0)obSel.splice(j,1);else obSel.push(i);obRender();}));
+    const pg=$('#plGo');if(pg)pg.addEventListener('click',function(){if(!obSel.length)return;withLoading(this,1100,function(){obBanks=obSel.slice().sort((a,b)=>a-b).map(i=>{const a=OB_PLAID_ACCTS[i];return {nick:a.bank,institution:a.inst,type:'checking',last4:a.last4,is_primary:false,rtp_eligible:a.rtp,tag:a.tag,color:a.color};});obPrimary=Math.max(0,obBanks.findIndex(b=>b.rtp_eligible));if(obPrimary<0)obPrimary=0;if(obBanks.length>1){obGo('primary');}else{obAfterPrimary();}});});
+  } else if(obKey==='primary'){
+    const rows=obBanks.map((a,i)=>'<button class="ob-acct'+(i===obPrimary?' on':'')+'" data-prim="'+i+'"><span class="blogo" style="background:'+a.color+'">'+a.tag+'</span><div class="ainfo"><div class="aname">'+a.nick+(a.rtp_eligible?' <span class="ob-rtp">'+OB_CHK+' Instant</span>':'')+'</div><div class="asub">'+a.institution+' ••••'+a.last4+'</div></div><span class="ob-tick rd">'+OB_CHK+'</span></button>').join('');
+    c.innerHTML=backBtn+'<h2 class="ob-h" style="margin-top:8px">Set your primary account</h2><p class="ob-sub">This is where your commissions and advances will be deposited. You can change it anytime.</p>'
+      +'<div style="margin-top:8px">'+rows+'</div>'
+      +'<button class="btn btn-primary block ob-btn" id="prGo">Continue '+OB_ARROW+'</button>';
+    $('#obBack').addEventListener('click',obBack);
+    c.querySelectorAll('[data-prim]').forEach(b=>b.addEventListener('click',function(){obPrimary=+b.dataset.prim;obRender();}));
+    $('#prGo').addEventListener('click',obAfterPrimary);
+  } else if(obKey==='card'){
+    const p=obBanks[obPrimary];
+    c.innerHTML=backBtn+OB_WALLET(true)+'<h2 class="ob-h">Add a debit card for instant payouts</h2><p class="ob-sub">'+(p?p.nick:'Your account')+' doesn’t support instant (RTP) deposits. Add a debit card to receive your money in seconds — or skip and use standard ACH.</p>'
+      +'<button class="btn btn-primary block ob-btn" id="cdGo">Add debit card '+OB_ARROW+'</button>'
+      +'<button class="btn btn-ghost block" id="cdSkip" style="margin-top:10px">Skip for now</button>'
+      +'<div class="ob-note">'+OB_LOCK+'Encrypted &amp; tokenized — used only for instant payouts.</div>';
+    $('#obBack').addEventListener('click',obBack);
+    $('#cdGo').addEventListener('click',function(){obCardAdded=true;withLoading(this,900,()=>obGo('split'));});
+    $('#cdSkip').addEventListener('click',()=>obGo('split'));
+  } else if(obKey==='split'){
+    const acctName=obBanks[obPrimary]?obBanks[obPrimary].nick:'your account';
+    c.innerHTML=backBtn+'<h2 class="ob-h" style="margin-top:8px">Auto-split your commissions</h2><p class="ob-sub">Optional — automatically divide every commission the moment it arrives. Change this anytime in Bank Settings.</p>'
       +'<div class="ob-splitprev">'+OB_DEFAULT_DIST.map(d=>'<div class="ob-sp-row"><span class="ob-sp-l"><span class="ob-sp-dot" style="background:'+d.color+'"></span>'+d.name+'</span><span class="ob-sp-pct">'+d.pct+'%</span></div>').join('')+'<div class="ob-sp-foot">All to '+acctName+'</div></div>'
-      +'<button class="btn btn-primary block ob-btn" id="obAutoYes">Turn on auto-split</button>'
-      +'<button class="btn btn-ghost block" id="obAutoSkip" style="margin-top:9px">Skip for now</button>';
+      +'<button class="btn btn-primary block ob-btn" id="spYes">Turn on auto-split</button>'
+      +'<button class="btn btn-ghost block" id="spSkip" style="margin-top:10px">Skip for now</button>';
+    $('#obBack').addEventListener('click',obBack);
+    $('#spYes').addEventListener('click',()=>{obAutoOn=true;obGo('done');});
+    $('#spSkip').addEventListener('click',()=>{obAutoOn=false;obGo('done');});
   } else {
-    f.innerHTML='<div class="ob-icon ok">'+ICON_CHECK+'</div><h2 class="ob-h">You’re all set, '+first+'!</h2><p class="ob-sub">Your account is ready. Commissions will appear here the moment a deal closes.</p><div class="ob-list">'
-      +obLi(ICON_CHECK,'Identity verified','You can receive funds.',true)
-      +obLi(ICON_CHECK,(obBank?obBank.nick+' connected':'Bank connected'),'Ready for deposits.',true)
-      +obLi(ICON_CHECK,obAutoOn?'Auto-split on':'Auto-split off',obAutoOn?'Commissions split automatically.':'Turn it on anytime in Bank Settings.',true)
-      +'</div><button class="btn btn-primary block ob-btn" id="obFinish">Go to my wallet</button>';
+    c.innerHTML=OB_WALLET()+'<h2 class="ob-h">You’re all set</h2><p class="ob-sub">Your '+obBrand()+' Wallet is ready. You’ll receive an email whenever a commission is ready, and you can update your distribution settings anytime.</p>'
+      +'<button class="btn btn-primary block ob-btn" id="obFinish">Go to Dashboard '+OB_ARROW+'</button>';
+    $('#obFinish').addEventListener('click',finishOnboarding);
   }
-  const nx=f.querySelector('[data-next]');if(nx)nx.addEventListener('click',()=>{if(obStep===1){const v=$('#obFullName');if(v&&v.value.trim())obName=v.value.trim();}obStep++;renderOnboarding();});
-  const ov=$('#obVerify');if(ov)ov.addEventListener('click',function(){withLoading(this,1100,()=>{obStep=3;renderOnboarding();});});
-  const op=$('#obPlaid');if(op)op.addEventListener('click',function(){withLoading(this,700,()=>{obPlaidOpen=true;renderOnboarding();});});
-  f.querySelectorAll('[data-bank]').forEach(function(b){b.addEventListener('click',function(){var k=OB_BANKS[+b.dataset.bank];withLoading(this,1000,function(){obBank={nick:k[0]+' Checking',institution:k[0],type:'checking',last4:k[2],is_primary:true,rtp_eligible:(k[0]!=='Marcus')};obPlaidOpen=false;renderOnboarding();});});});
-  const ay=$('#obAutoYes');if(ay)ay.addEventListener('click',()=>{obAutoOn=true;obStep=5;renderOnboarding();});
-  const as=$('#obAutoSkip');if(as)as.addEventListener('click',()=>{obAutoOn=false;obStep=5;renderOnboarding();});
-  const fin=$('#obFinish');if(fin)fin.addEventListener('click',finishOnboarding);
 }
-$('#obBack').addEventListener('click',()=>{if(obStep===3&&obBank){obBank=null;renderOnboarding();return;}if(obStep===3&&obPlaidOpen){obPlaidOpen=false;renderOnboarding();return;}if(obStep>0){obStep--;renderOnboarding();}});
-function finishOnboarding(){$('#onboarding').classList.remove('show');document.body.style.overflow='';const buckets=obAutoOn?OB_DEFAULT_DIST.map((d,i)=>({name:d.name,ai:0,pct:d.pct,icon:d.icon,color:d.color,sort_order:i})):[];enterNewUserState(obBank,buckets,obAutoOn);go('wallet');}
+function finishOnboarding(){$('#onboarding').classList.remove('show');document.body.style.overflow='';
+  const buckets=obAutoOn?OB_DEFAULT_DIST.map((d,i)=>({name:d.name,ai:0,pct:d.pct,icon:d.icon,color:d.color,sort_order:i})):[];
+  obBanks.forEach((b,i)=>b.is_primary=(i===obPrimary));
+  enterNewUserState(obBanks,buckets,obAutoOn);go('wallet');
+  setTimeout(obStartTour,560);}
+/* ===== DASHBOARD TOUR (skippable) ===== */
+const OB_TOUR=[
+  {sel:'.balance-card',title:'Your commissions',body:'When a deal closes, your commission lands here — ready to receive the day you close.'},
+  {sel:'.adv-split',title:'Cash advance',body:'Need funds sooner? Request an advance against a pre-approved deal and repay it automatically when the commission arrives.'},
+  {sel:'.card-widget',title:'Your advance card',body:'Spend your available advance instantly with this card — it draws straight from your cash advance, no transfer needed.'},
+  {sel:'.act-mobile',title:'Activity',body:'Every deposit, advance and card purchase shows up here, so you always know where your money is.'}
+];
+let obTourI=0;
+function obTipBtns(){return '<div class="ob-tip-foot"><div class="ob-tip-dots">'+OB_TOUR.map((_,i)=>'<span class="'+(i===obTourI?'on':'')+'"></span>').join('')+'</div><div class="ob-tip-btns"><button class="ob-tip-skip" id="tourSkip">Skip</button><button class="ob-tip-next" id="tourNext">'+(obTourI<OB_TOUR.length-1?'Next':'Done')+'</button></div></div>';}
+function obStartTour(){obTourI=0;const t=$('#obTour');if(!t)return;t.classList.add('show');document.body.style.overflow='hidden';obTourStep();
+  window.addEventListener('resize',obTourReposition);}
+function obTourStep(){
+  const step=OB_TOUR[obTourI];const el=step&&document.querySelector(step.sel);
+  if(!el){if(obTourI<OB_TOUR.length-1){obTourI++;return obTourStep();}return obEndTour();}
+  try{el.scrollIntoView({block:'center',behavior:'smooth'});}catch(e){}
+  setTimeout(()=>obTourPlace(el,step),360);
+}
+function obTourPlace(el,step){
+  const r=el.getBoundingClientRect();const pad=10,vw=innerWidth,vh=innerHeight;
+  const sp=$('#obSpot');sp.style.left=(r.left-pad)+'px';sp.style.top=(r.top-pad)+'px';sp.style.width=(r.width+pad*2)+'px';sp.style.height=(r.height+pad*2)+'px';
+  const tip=$('#obTip');tip.innerHTML='<h4>'+step.title+'</h4><p>'+step.body+'</p>'+obTipBtns();
+  const tw=tip.offsetWidth||320,th=tip.offsetHeight||150;
+  let top=r.bottom+pad+8;if(top+th>vh-12)top=Math.max(12,r.top-th-pad-8);
+  let left=r.left+r.width/2-tw/2;left=Math.max(12,Math.min(left,vw-tw-12));
+  tip.style.top=top+'px';tip.style.left=left+'px';
+  $('#tourSkip').addEventListener('click',obEndTour);
+  $('#tourNext').addEventListener('click',()=>{if(obTourI<OB_TOUR.length-1){obTourI++;obTourStep();}else obEndTour();});
+}
+function obTourReposition(){const step=OB_TOUR[obTourI];const el=step&&document.querySelector(step.sel);if(el&&$('#obTour').classList.contains('show'))obTourPlace(el,step);}
+function obEndTour(){const t=$('#obTour');if(t)t.classList.remove('show');document.body.style.overflow='';window.removeEventListener('resize',obTourReposition);}
 
 /* TRANSFER (send only) */
 const tMode='send';let tAmount='',tSrc=null,tDest=null,tStep=0;
