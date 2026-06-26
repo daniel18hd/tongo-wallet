@@ -163,7 +163,7 @@ a{color:inherit;text-decoration:none}
   .card-widget .card-wrap{max-width:340px;width:100%;margin:auto auto}
   .card-widget .card-controls{gap:48px;margin-top:22px}
 }
-.balance-card{padding:22px;display:flex;flex-direction:column;min-height:100%}
+.balance-card{padding:20px 22px;display:flex;flex-direction:column;justify-content:center;min-height:178px}
 .bc-label{font-size:12px;color:var(--txt-2);font-weight:500;display:flex;align-items:center;gap:8px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--pos);box-shadow:0 0 0 3px var(--pos-soft);animation:pulse 2.6s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 3px var(--pos-soft)}50%{box-shadow:0 0 0 6px transparent}}
@@ -331,6 +331,38 @@ a{color:inherit;text-decoration:none}
 .ob-tip-btns{display:flex;align-items:center;gap:6px}
 .ob-tip-skip{font-size:12.5px;color:var(--txt-3);background:none;border:none;cursor:pointer;padding:8px 10px}
 .ob-tip-next{font-size:13px;font-weight:620;color:#fff;background:var(--accent);border:none;border-radius:10px;padding:9px 16px;cursor:pointer}
+/* onboarding: plaid phone / otp / dist intro / card form */
+.ob-phone{display:flex;align-items:center;gap:10px;height:54px;border:1px solid var(--line-2);border-radius:14px;padding:0 16px;background:var(--surface)}
+.ob-phone .flag{font-size:18px;line-height:1}
+.ob-phone .cc{font-size:16px;font-weight:600;color:var(--txt-1)}
+.ob-phone input{flex:1;border:none;background:none;font-size:16px;color:var(--txt-1);outline:none;font-family:inherit;min-width:0}
+.ob-terms{font-size:12px;color:var(--txt-3);text-align:center;margin-top:14px}
+.ob-terms a{text-decoration:underline;cursor:pointer}
+.ob-textbtn{display:block;width:100%;text-align:center;background:none;border:none;font-size:14px;font-weight:600;color:var(--txt-1);cursor:pointer;padding:13px;margin-top:6px}
+.ob-otp{display:flex;gap:10px;justify-content:center;margin:18px 0 2px}
+.ob-otp input{width:52px;height:60px;border:1px solid var(--line-2);border-radius:14px;text-align:center;font-size:22px;font-weight:700;color:var(--txt-1);font-family:inherit;outline:none;background:var(--surface)}
+.ob-otp input:focus{border-color:var(--accent-ink)}
+.ob-resend{text-align:center;font-size:13px;color:var(--txt-2);margin:14px 0 2px;background:none;border:none;cursor:pointer;width:100%}
+.ob-dist{display:flex;flex-direction:column;align-items:center;text-align:center}
+.odi-coin{width:74px;height:74px}
+.odi-amt{font-size:30px;font-weight:720;letter-spacing:-.03em;margin-top:2px}
+.odi-amt span{color:var(--txt-3);font-weight:600}
+.odi-cap{font-size:12.5px;color:var(--txt-2);margin-top:4px;max-width:240px}
+.odi-stem{width:1.5px;height:22px;background:var(--line-2);margin-top:10px}
+.odi-cards{display:flex;gap:14px;justify-content:center;margin-top:14px;width:100%}
+.odi-card{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.odi-ic{width:54px;height:54px;border-radius:50%;display:grid;place-items:center}
+.odi-ic svg{width:26px;height:26px}
+.odi-card b{font-size:13px;font-weight:600}
+.odi-card i{font-size:15px;font-weight:720;font-style:normal}
+.ob-cardic{width:46px;height:46px;border-radius:50%;background:var(--surface-3);display:grid;place-items:center;color:var(--txt-2);margin-bottom:14px}
+.ob-cardic svg{width:22px;height:22px}
+.ob-feenote{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--txt-2);margin-top:14px}
+.ob-feenote svg{width:15px;height:15px;color:var(--accent);flex-shrink:0}
+.ob-why{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--txt-2);cursor:pointer;margin-top:9px}
+.ob-why svg{width:15px;height:15px}
+.ob-grid3eq{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-top:15px}
+@media(max-width:560px){.odi-ic{width:48px;height:48px}.odi-ic svg{width:23px;height:23px}.ob-otp input{width:46px;height:54px;font-size:20px}}
 /* pre-approved card (refined) */
 .pa-card{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--surface);margin-top:16px}
 .pa-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
@@ -388,7 +420,7 @@ a{color:inherit;text-decoration:none}
 .bc-actions .btn{flex:1;justify-content:center}
 /* wallet left column: commission + advance + transfer CTA */
 .wt-left{display:flex;flex-direction:column;gap:14px;min-width:0}
-.adv-split{padding:18px 20px}
+.adv-split{padding:18px 20px;min-height:178px}
 .adv-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
 .adv-col{min-width:0}
 .adv-amt{font-size:24px;font-weight:600;letter-spacing:-.03em;line-height:1;margin-top:5px}
@@ -404,7 +436,7 @@ a{color:inherit;text-decoration:none}
 .adv-sched:hover{border-color:var(--line-2);color:var(--txt);background:var(--surface-3)}
 .adv-sched svg{width:13px;height:13px;flex-shrink:0}
 .adv-sched .ar-chev{width:12px;height:12px;margin-left:1px;color:var(--txt-3)}
-.adv-cta{justify-content:center}
+.adv-cta,.comm-cta{justify-content:center}
 .metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 .metric{padding:18px}
 .m-label{font-size:12px;color:var(--txt-2);font-weight:500;margin-bottom:9px}
@@ -584,6 +616,34 @@ a{color:inherit;text-decoration:none}
 .cc-btn:hover .ic{background:var(--line-2)}
 .cc-btn:active .ic{transform:scale(.92)}
 .cc-btn:disabled{opacity:.4;cursor:default;pointer-events:none}
+/* swipeable card deck */
+.card-stack{position:relative;aspect-ratio:1.586/1;margin-bottom:26px}
+.cs-slide{position:absolute;top:0;left:0;width:100%;transition:transform .55s cubic-bezier(.34,1.15,.4,1),opacity .42s var(--ease),filter .42s var(--ease);will-change:transform,opacity;cursor:pointer;touch-action:pan-y}
+.cs-slide.is-active{transform:none;opacity:1;z-index:3;cursor:default}
+.cs-slide.is-behind{transform:translateY(22px) scale(.9);opacity:.55;z-index:1;filter:saturate(.85) brightness(.96)}
+.cs-slide .flip{width:100%}
+.cs-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:2px}
+.cs-arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--txt-2);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.cs-arrow svg{width:16px;height:16px}
+.cs-arrow:hover{border-color:var(--line-2);color:var(--txt);background:var(--surface-3)}
+.cs-dots{display:flex;gap:7px;align-items:center}
+.cs-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);border:none;cursor:pointer;padding:0;transition:width .3s var(--ease),background .3s}
+.cs-dot.is-on{width:20px;background:var(--accent-ink);border-radius:99px}
+/* metallic early-access credit card */
+.ccard{position:relative;aspect-ratio:1.586/1;border-radius:18px;overflow:hidden;container-type:inline-size;color:#fff;padding:7%;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(135deg,#2d323b 0%,#171b21 46%,#262b33 68%,#0f1216 100%);box-shadow:0 24px 48px -22px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.09)}
+.ccard-sheen{position:absolute;inset:0;background:linear-gradient(118deg,transparent 28%,rgba(255,255,255,.16) 46%,transparent 62%);pointer-events:none}
+.ccard-row{display:flex;align-items:center;justify-content:space-between;position:relative}
+.ccard-tag{font-size:5.6cqw;font-weight:700;letter-spacing:-.02em}
+.ccard-soon{font-size:2.9cqw;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.16);padding:1.1cqw 2.6cqw;border-radius:999px}
+.ccard-chip{width:13%;aspect-ratio:1.35/1;border-radius:14%;background:linear-gradient(135deg,#e2cf94,#b1892b);position:relative;box-shadow:inset 0 0 0 .4cqw rgba(0,0,0,.12)}
+.ccard-num{font-size:5cqw;letter-spacing:.14em;font-weight:500;color:rgba(255,255,255,.92)}
+.ccard-foot{display:flex;align-items:flex-end;justify-content:space-between}
+.ccard-ea{font-size:2.9cqw;letter-spacing:.2em;font-weight:600;color:rgba(255,255,255,.7)}
+.ccard-net{font-size:4.6cqw;font-weight:700;letter-spacing:.05em}
+.cc-credit{margin-top:2px;text-align:center}
+.cc-credit .btn{width:100%}
+.cc-credit-note{font-size:12px;color:var(--txt-3);margin-top:11px;line-height:1.5}
+.cc-credit.done .btn{background:var(--pos-soft);color:var(--pos);pointer-events:none;box-shadow:none}
 
 /* ===== BANK: toggle method, distributions, paper check ===== */
 .lk{color:var(--accent-ink);font-weight:600;font-size:13px;cursor:pointer;background:none;border:none}
@@ -873,6 +933,11 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 .rc-preview{margin-left:auto;color:var(--accent-ink);font-weight:600;font-size:12.5px;cursor:pointer}
 .rc-preview:hover{text-decoration:underline}
 .rc-opt-s{font-size:12px;color:var(--txt-3);margin-top:3px}
+.rc-mini{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px}
+.rc-mini-acct{font-size:13.5px;font-weight:600;color:var(--txt-1);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rc-mini-edit{font-size:12.5px;font-weight:600;color:var(--accent-ink);background:none;border:none;cursor:pointer;padding:3px 7px;border-radius:8px;flex-shrink:0}
+.rc-mini-edit:hover{background:var(--accent-soft)}
+.rc-one-acct{margin-top:8px}
 .rc-preview-body{margin-top:12px;border-top:1px solid var(--line)}
 .rc-bk{display:flex;align-items:center;gap:11px;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:10px 0;border-bottom:1px solid var(--line)}
 .rc-bk:last-child{border-bottom:none}.rc-bk:hover{opacity:.82}
@@ -1038,10 +1103,8 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
           <div class="bc-top"><div class="bc-label"><span class="dot"></span>Commission ready to receive</div><div class="bc-deeplink" id="commAutoCtl"></div></div>
           <div class="bc-amount tnum">$14,500<span class="c">.00</span></div>
           <button class="bc-view" id="bcViewBtn">From 3 commissions<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="bc-actions" id="commActions">
-            <button class="btn btn-primary" id="receiveBtn">Receive commission<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          </div>
         </div>
+        <button class="btn btn-primary block comm-cta" id="receiveBtn">Receive commission<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div class="card adv-split reveal">
           <div class="bc-top"><span class="bc-label adv">Cash advance</span><a class="bc-deeplink" id="reqAdvBtn"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Request advance</a></div>
           <div class="adv-two">
@@ -1064,8 +1127,10 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
         <div class="auto-note" id="advAutoNote" style="display:none"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h9l-2-2m2 2l-2 2M19 17h-9l2-2m-2 2l2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Auto-distributed to your accounts when drawn</div>
       </div>
       <div class="card-widget">
-      <div class="cw-title">Advance Card</div>
+      <div class="cw-title" id="cwTitle">Advance Card</div>
       <div class="card-wrap reveal">
+        <div class="card-stack" id="cardStack">
+        <div class="cs-slide is-active" data-card="0">
         <div class="flip" id="cardFlip">
           <div class="flip-inner">
             <div class="flip-face flip-front"><div class="dcard" id="dcard"><div class="logo-ovl" id="cardLogoOvl"><img alt=""></div></div></div>
@@ -1081,9 +1146,29 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
             </div>
           </div>
         </div>
-        <div class="card-controls">
+        </div>
+        <div class="cs-slide" data-card="1">
+          <div class="ccard">
+            <div class="ccard-sheen"></div>
+            <div class="ccard-row"><span class="ccard-tag" data-cardword>Tongo</span><span class="ccard-soon" id="ccSoon">Coming soon</span></div>
+            <div class="ccard-chip"></div>
+            <div class="ccard-num tnum">•••• •••• •••• 0000</div>
+            <div class="ccard-foot"><span class="ccard-ea">EARLY ACCESS</span><span class="ccard-net">CREDIT</span></div>
+          </div>
+        </div>
+        </div>
+        <div class="cs-nav" id="csNav">
+          <button class="cs-arrow" id="csPrev" aria-label="Previous card"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="cs-dots"><button class="cs-dot is-on" data-go="0" aria-label="Advance card"></button><button class="cs-dot" data-go="1" aria-label="Credit card"></button></div>
+          <button class="cs-arrow" id="csNext" aria-label="Next card"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+        <div class="card-controls" id="cardControls">
           <button class="cc-btn" id="showDetailsBtn"><span class="ic" id="showIc"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></span><span id="showLbl">Show details</span></button>
           <button class="cc-btn" id="freezeBtn"><span class="ic" id="freezeIc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l14 10M19 7L5 17M3.5 12h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span id="freezeLbl">Freeze card</span></button>
+        </div>
+        <div class="cc-credit" id="ccCredit" style="display:none">
+          <button class="btn btn-primary block" id="reqEarlyBtn">Request early access</button>
+          <div class="cc-credit-note">Be first to spend on credit, build history, and unlock higher limits — drawn from your future commissions.</div>
         </div>
       </div>
       </div>
@@ -1127,11 +1212,11 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
         <div class="tm-stack">
           <div class="tm-state" id="tmAutoActive">
             <div class="tm-title">Auto-distribute funds <span class="bolt"><svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span> <span class="pill pos"><span class="d"></span>On</span> <button class="info-btn" data-info="auto" aria-label="How it works"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.05" fill="currentColor"/></svg></button></div>
-            <div class="tm-sub">Every commission &amp; advance is split automatically by your setup below</div>
+            <div class="tm-sub">Every commission is split automatically by your setup below</div>
           </div>
           <div class="tm-state on" id="tmAutoOff">
             <div class="tm-title">Auto-distribute funds <button class="info-btn" data-info="auto" aria-label="How it works"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.05" fill="currentColor"/></svg></button></div>
-            <div class="tm-sub">Turn on to route commissions &amp; advances automatically — no manual step</div>
+            <div class="tm-sub">Turn on to route every commission automatically — no manual step</div>
           </div>
         </div>
         <div class="switch" id="autoSwitch"><i></i></div>
@@ -1249,7 +1334,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   <div class="rc-q">How would you like to receive this money?</div>
   <div class="rc-opts" id="rcOpts">
   <div class="rc-opt sel" id="rcOptRules"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Use Distribution Rules <a class="rc-preview" id="rcPreviewLink">Preview</a></div><div class="rc-opt-s">Your funds will be distributed automatically</div><div class="rc-preview-body" id="rcPreview" style="display:none"></div><a class="rc-editrules" id="rcEditRules" style="display:none"><svg viewBox="0 0 24 24" fill="none" width="13" height="13"><path d="M4 20h4L18.5 9.5a2.1 2.1 0 00-3-3L5 17v3z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>Edit distribution rules</a></div></div>
-  <div class="rc-opt" id="rcOptOne"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Send entire amount to one account</div><div class="rc-opt-s">Choose a single account to receive all funds</div><select class="d-acct rc-one-acct" id="rcOneAcct" style="display:none"></select></div></div>
+  <div class="rc-opt" id="rcOptOne"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Send entire amount to one account</div><div class="rc-opt-s" id="rcOneSub">Choose a single account to receive all funds</div><div class="rc-mini" id="rcMini" style="display:none"><span class="rc-mini-acct" id="rcMiniName">—</span><button type="button" class="rc-mini-edit" id="rcMiniEdit">Edit</button></div><select class="d-acct rc-one-acct" id="rcOneAcct" style="display:none"></select></div></div>
   </div>
   <div class="rc-lbl">Transfer method</div>
   <div class="rc-method"><div class="rc-method-t" id="rcMethodTitle">Instant Transfer</div><div class="rc-method-s" id="rcMethodSub">Arrives in minutes · $27 fee</div></div>
@@ -1281,7 +1366,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
     <div class="rc-lbl">Destination</div>
     <div class="rc-q">Where should this advance go?</div>
     <div class="rc-opts" id="atOpts">
-    <div class="rc-opt sel" id="atOptOne"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Send to one account</div><div class="rc-opt-s">Choose a single account to receive it all</div><select class="d-acct rc-one-acct" id="atAcct"></select></div></div>
+    <div class="rc-opt sel" id="atOptOne"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Send to one account</div><div class="rc-opt-s" id="atOneSub">Choose a single account to receive it all</div><div class="rc-mini" id="atMini" style="display:none"><span class="rc-mini-acct" id="atMiniName">—</span><button type="button" class="rc-mini-edit" id="atMiniEdit">Edit</button></div><select class="d-acct rc-one-acct" id="atAcct" style="display:none"></select></div></div>
     <div class="rc-opt" id="atOptRules"><span class="rc-radio"></span><div class="rc-opt-main"><div class="rc-opt-t">Use Distribution Rules <a class="rc-preview" id="atPreviewLink">Preview</a></div><div class="rc-opt-s">Split this transfer across your accounts</div><div class="rc-preview-body" id="atPreview" style="display:none"></div></div></div>
     </div>
     <div class="rc-lbl">Transfer method</div>
@@ -1319,7 +1404,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 
 <div class="modal" id="modal-autointro"><button class="close" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   <h3>Automate your commissions</h3>
-  <p class="sub">Stop receiving commissions by hand. Tongo can accept every commission and advance for you and route it straight to the right accounts.</p>
+  <p class="sub">Stop receiving commissions by hand. Tongo can accept every commission for you and route it straight to the right accounts.</p>
   <div class="intro-rows">
     <div class="intro-row"><span class="intro-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="intro-t">Hands-free deposits</div><div class="intro-s">Funds arrive and split the moment a commission clears.</div></div></div>
     <div class="intro-row"><span class="intro-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10l8-5 8 5M5 10v8m14-8v8M9 10v8m6-8v8M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="intro-t">Your accounts, your split</div><div class="intro-s" id="introSplit">Uses your distribution setup across connected accounts.</div></div></div>
@@ -1398,6 +1483,7 @@ function applyBrand(b){
   $$('[data-logo]').forEach(s=>s.innerHTML=navLogoHTML(b));
   $$('[data-avatar]').forEach(a=>{a.textContent=initials(b.name);});
   $$('[data-cardtitle]').forEach(e=>{e.textContent=(b.name||'Card').split(/\s+/)[0].toUpperCase()+' CARD';});
+  $$('[data-cardword]').forEach(e=>{e.textContent=(b.name||'Tongo').split(/\s+/)[0];});
   renderCard(b);
 }
 function renderPresets(){
@@ -1590,7 +1676,11 @@ $('#receiveBtn').addEventListener('click',()=>{openModal('receive');renderReceiv
 $('#rcViewBtn').addEventListener('click',function(){const c=$('#rcComms');const open=c.style.display==='none'||!c.style.display;c.style.display=open?'block':'none';this.classList.toggle('open',open);});
 $('#rcPreviewLink').addEventListener('click',e=>{e.stopPropagation();const p=$('#rcPreview'),er=$('#rcEditRules');const open=p.style.display==='none'||!p.style.display;p.style.display=open?'block':'none';er.style.display=open?'inline-flex':'none';$('#rcPreviewLink').textContent=open?'Hide':'Preview';});
 function flipToTop(container,el){if(!container||!el||container.firstElementChild===el)return;const kids=[...container.children];const first=kids.map(k=>k.getBoundingClientRect());container.insertBefore(el,container.firstElementChild);const last=kids.map(k=>k.getBoundingClientRect());kids.forEach((k,i)=>{const dy=first[i].top-last[i].top;if(dy){k.style.transition='none';k.style.transform='translateY('+dy+'px)';requestAnimationFrame(()=>{k.style.transition='transform .34s cubic-bezier(.4,0,.2,1)';k.style.transform='';});}});}
-function setRcDest(d){rcDest=d;$('#rcOptRules').classList.toggle('sel',d==='rules');$('#rcOptOne').classList.toggle('sel',d==='one');$('#rcOneAcct').style.display=d==='one'?'block':'none';flipToTop($('#rcOpts'),d==='rules'?$('#rcOptRules'):$('#rcOptOne'));}
+function selLabel(s){const o=s&&s.selectedOptions&&s.selectedOptions[0];return o?o.textContent:'—';}
+function oneShow(subId,miniId,nameId,selId,on){const sub=$('#'+subId),mini=$('#'+miniId),sel=$('#'+selId);if(on){if(sub)sub.style.display='none';if(mini){mini.style.display='flex';$('#'+nameId).textContent=selLabel(sel);}if(sel)sel.style.display='none';}else{if(sub)sub.style.display='';if(mini)mini.style.display='none';if(sel)sel.style.display='none';}}
+function setRcDest(d){rcDest=d;$('#rcOptRules').classList.toggle('sel',d==='rules');$('#rcOptOne').classList.toggle('sel',d==='one');oneShow('rcOneSub','rcMini','rcMiniName','rcOneAcct',d==='one');flipToTop($('#rcOpts'),d==='rules'?$('#rcOptRules'):$('#rcOptOne'));}
+$('#rcMiniEdit').addEventListener('click',e=>{e.stopPropagation();const s=$('#rcOneAcct');s.style.display=(s.style.display==='none'||!s.style.display)?'block':'none';});
+$('#rcOneAcct').addEventListener('change',()=>{$('#rcMiniName').textContent=selLabel($('#rcOneAcct'));$('#rcOneAcct').style.display='none';});
 $('#rcOptRules').addEventListener('click',()=>setRcDest('rules'));
 $('#rcOptOne').addEventListener('click',()=>setRcDest('one'));
 $('#rcEditRules').addEventListener('click',e=>{e.stopPropagation();closeModal();go('bank');setDistEdit(true);setTimeout(()=>{const c=$('#distCard');if(c)c.scrollIntoView({behavior:'smooth',block:'center'});},160);});
@@ -1609,7 +1699,9 @@ function atFee(amt){const instant=$('#speedSwitch')&&$('#speedSwitch').classList
 const commafy=s=>{const d=String(s).replace(/[^\d]/g,'');return d?(+d).toLocaleString('en-US'):'';};
 let atDest='one';
 function renderAtPreview(){const el=$('#atPreview');if(!el)return;const a=atAmt();el.innerHTML=dist.map((d,i)=>{const ac=accounts[d.ai]||accounts[0];const amt=Math.round(a*d.pct/100);return `<button class="rc-bk" data-bucket="${i}"><span class="d-ico" style="${icoStyle(d)}">${icoSvg(d)}</span><div class="d-main"><div class="d-name">${d.name}</div><div class="d-sub">${acctLabel(ac)}</div></div><div class="rc-bk-r"><div class="rc-bk-amt">${money(amt)}</div><div class="rc-bk-pct">${d.pct}%</div></div></button>`;}).join('');$$('#atPreview .rc-bk').forEach(b=>b.addEventListener('click',ev=>{ev.stopPropagation();openBucket(+b.dataset.bucket);}));}
-function setAtDest(d){atDest=d;$('#atOptRules').classList.toggle('sel',d==='rules');$('#atOptOne').classList.toggle('sel',d==='one');$('#atAcct').style.display=d==='one'?'block':'none';flipToTop($('#atOpts'),d==='rules'?$('#atOptRules'):$('#atOptOne'));}
+function setAtDest(d){atDest=d;$('#atOptRules').classList.toggle('sel',d==='rules');$('#atOptOne').classList.toggle('sel',d==='one');oneShow('atOneSub','atMini','atMiniName','atAcct',d==='one');flipToTop($('#atOpts'),d==='rules'?$('#atOptRules'):$('#atOptOne'));}
+$('#atMiniEdit').addEventListener('click',e=>{e.stopPropagation();const s=$('#atAcct');s.style.display=(s.style.display==='none'||!s.style.display)?'block':'none';});
+$('#atAcct').addEventListener('change',()=>{$('#atMiniName').textContent=selLabel($('#atAcct'));$('#atAcct').style.display='none';});
 function renderAdvTransfer(){
   $('#atAvail').textContent=money(advAvail);
   $('#atInput').value=commafy(advAvail);
@@ -1652,6 +1744,31 @@ const freezeSvg='<svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l14 1
 const unfreezeSvg='<svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l14 10M19 7L5 17M3.5 12h17M4 4l16 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
 $('#showDetailsBtn').addEventListener('click',()=>{if(frozen)return;flipped=!flipped;cardFlip.classList.toggle('flipped',flipped);$('#showLbl').textContent=flipped?'Hide details':'Show details';$('#showIc').innerHTML=flipped?eyeOffSvg:eyeSvg;});
 $('#freezeBtn').addEventListener('click',()=>{frozen=!frozen;if(frozen){flipped=false;cardFlip.classList.remove('flipped');$('#showLbl').textContent='Show details';$('#showIc').innerHTML=eyeSvg;}cardFlip.classList.toggle('frozen',frozen);$('#freezeLbl').textContent=frozen?'Unfreeze card':'Freeze card';$('#freezeIc').innerHTML=frozen?unfreezeSvg:freezeSvg;$('#showDetailsBtn').disabled=frozen;showToast(frozen?'Card frozen':'Card unfrozen');});
+/* SWIPEABLE CARD DECK (advance card + early-access credit card) */
+(function(){
+  const stack=$('#cardStack');if(!stack)return;
+  const slides=[...stack.querySelectorAll('.cs-slide')];
+  const dots=[...document.querySelectorAll('.cs-dot')];
+  let cur=0,earlyDone=false;
+  function setCard(i){i=Math.max(0,Math.min(slides.length-1,i));cur=i;
+    slides.forEach((s,k)=>{s.classList.toggle('is-active',k===i);s.classList.toggle('is-behind',k!==i);});
+    dots.forEach((d,k)=>d.classList.toggle('is-on',k===i));
+    const t=$('#cwTitle');if(t)t.textContent=i===0?'Advance Card':'Credit Card';
+    const cc=$('#cardControls');if(cc)cc.style.display=i===0?'':'none';
+    const ce=$('#ccCredit');if(ce)ce.style.display=i===1?'':'none';}
+  setCard(0);
+  dots.forEach(d=>d.addEventListener('click',()=>setCard(+d.dataset.go)));
+  const pv=$('#csPrev'),nx=$('#csNext');
+  if(pv)pv.addEventListener('click',()=>setCard(cur-1));
+  if(nx)nx.addEventListener('click',()=>setCard(cur+1));
+  slides.forEach((s,k)=>s.addEventListener('click',e=>{if(k!==cur){e.preventDefault();e.stopPropagation();setCard(k);}}));
+  let sx=0,sw=false;
+  stack.addEventListener('pointerdown',e=>{sx=e.clientX;sw=true;});
+  stack.addEventListener('pointerup',e=>{if(!sw)return;sw=false;const dx=e.clientX-sx;if(dx<-40)setCard(cur+1);else if(dx>40)setCard(cur-1);});
+  stack.addEventListener('pointercancel',()=>{sw=false;});
+  const req=$('#reqEarlyBtn');
+  if(req)req.addEventListener('click',function(){if(earlyDone)return;withLoading(this,1000,()=>{earlyDone=true;const ce=$('#ccCredit');if(ce)ce.classList.add('done');req.textContent='✓ You’re on the waitlist';const soon=$('#ccSoon');if(soon)soon.textContent='Waitlisted';showToast('You’re on the early-access waitlist');});});
+})();
 document.addEventListener('click',e=>{const c=e.target.closest('[data-copy]');if(c){copy(c.dataset.copy,'Copied to clipboard');}});
 
 /* BANK */
@@ -1667,10 +1784,9 @@ const ICON_AUTO='<svg viewBox="0 0 24 24" fill="none"><path d="M5 7h9l-2-2m2 2l-
 const ICON_CHECK='<svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ICON_I='<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8" r="1.05" fill="currentColor"/></svg>';
 function renderAuto(){
-  const ctl=$('#commAutoCtl'),recv=$('#receiveBtn'),acts=$('#commActions');
+  const ctl=$('#commAutoCtl'),recv=$('#receiveBtn');
   const showRecv=commTotal>0&&!autoDist;
   if(recv)recv.style.display=showRecv?'':'none';
-  if(acts)acts.style.display=showRecv?'flex':'none';
   if(ctl){
     if(autoDist){ctl.className='bc-deeplink is-auto';ctl.innerHTML='<span class="cas-txt">'+ICON_CHECK+'Auto-distribute on</span><button class="info-btn" data-info="dist" aria-label="View distribution">'+ICON_I+'</button>';}
     else{ctl.className='bc-deeplink';ctl.innerHTML=ICON_AUTO+'Automate';}
@@ -1718,7 +1834,7 @@ const hoverCap=window.matchMedia&&window.matchMedia('(hover:hover) and (pointer:
 function feeOn(amt){return amt>1500?27:Math.round(amt*0.0175);}
 function infoContent(key){
   if(key==='fees'){const f=feeOn(commTotal);return{title:'Instant transfer fees',html:'<div class="ip-body">Instant payouts arrive in minutes and include a small fee. Traditional ACH is always free but takes 1–3 business days.</div><div class="ip-rows"><div class="ip-row"><span class="irl">Up to $1,500</span><span class="irr">1.75%</span></div><div class="ip-row"><span class="irl">Above $1,500</span><span class="irr">Flat $27</span></div></div><div class="ip-foot"><span>Fee on your '+money(commTotal)+' ready</span><span>'+money(f)+'</span></div>'};}
-  if(key==='auto'){return{title:'How auto-distribute works',html:'<div class="ip-body">When this is on, every commission and advance is received automatically and split across your connected accounts using your distribution setup below — the money lands in the right places with no manual step. Turn it off any time to approve each payout yourself.</div>'};}
+  if(key==='auto'){return{title:'How auto-distribute works',html:'<div class="ip-body">When this is on, every commission is received automatically and split across your connected accounts using your distribution setup below — the money lands in the right places with no manual step. Turn it off any time to approve each payout yourself.</div>'};}
   if(key==='dist'){const rows=dist.map(d=>{const amt=Math.round(commTotal*d.pct/100);return'<div class="ip-row"><span class="irl"><span class="irdot" style="background:'+d.color+'"></span>'+d.name+' · '+d.pct+'%</span><span class="irr">'+money(amt)+'</span></div>';}).join('');return{title:'How your funds will deploy',html:'<div class="ip-body">Your '+money(commTotal)+' ready will be split automatically across your accounts:</div><div class="ip-rows">'+rows+'</div><div class="ip-foot"><span>Total</span><span>'+money(commTotal)+'</span></div>'};}
   return{title:'Details',html:''};
 }
@@ -1875,6 +1991,13 @@ const OB_ARROW='<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-5-5m
 const OB_LOCK='<svg viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0110 0v3M6 11h12v9H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>';
 const OB_CHK='<svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const OB_PMARK='<svg viewBox="0 0 36 36" fill="#111"><rect x="15.5" y="2" width="6" height="6" rx="1.4" transform="rotate(45 18.5 5)"/><rect x="4" y="13.5" width="6" height="6" rx="1.4" transform="rotate(45 7 16.5)"/><rect x="27" y="13.5" width="6" height="6" rx="1.4" transform="rotate(45 30 16.5)"/><rect x="15.5" y="25" width="6" height="6" rx="1.4" transform="rotate(45 18.5 28)"/><rect x="14" y="12" width="8" height="8" rx="1.6"/></svg>';
+const OB_COIN='<svg class="odi-coin" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><g stroke="#111" stroke-width="2.2" stroke-linecap="round"><path d="M40 7v8"/><path d="M22 13l4 7"/><path d="M58 13l-4 7"/></g><circle cx="40" cy="47" r="21" fill="#fff" stroke="#111" stroke-width="2.4"/><text x="40" y="56" text-anchor="middle" font-family="Geist,Inter,sans-serif" font-size="23" font-weight="800" fill="var(--accent)">$</text></svg>';
+const OB_IC_SAVE='<svg viewBox="0 0 24 24" fill="none"><path d="M19.4 11.2c0-1-.4-1.9-1-2.6.2-.5.2-1.2-.1-1.9-1 0-1.7.4-2.1.8A6.7 6.7 0 0012 7c-3.6 0-6.5 2.4-6.5 5.5 0 1.6.8 3 2 4V19h2.4v-1.2c.5.1 1 .2 1.6.2H13V19h2.4v-1.4c.8-.4 1.4-1 1.9-1.7H19v-2.9h-.6c0-.2 0-.4-.1-.6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="9.4" cy="12" r="1" fill="currentColor"/></svg>';
+const OB_IC_TAX='<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M4 9.5h16" stroke="currentColor" stroke-width="1.6"/><path d="M7.5 14h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const OB_IC_EXP='<svg viewBox="0 0 24 24" fill="none"><path d="M7 3.5h6.5L18 8v12.5H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.5 3.5V8H18" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9.5 12.5h5M9.5 16h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+const OB_IC_CARD='<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.7"/></svg>';
+const OB_BOLT2='<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>';
+const OB_INFO='<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="currentColor"/></svg>';
 /* line-art wallet + coin illustration */
 function OB_WALLET(sm){return '<svg class="ob-illo'+(sm?' sm':'')+'" viewBox="0 0 224 196" fill="none" xmlns="http://www.w3.org/2000/svg">'
   +'<ellipse cx="112" cy="186" rx="66" ry="6.5" fill="#111" opacity=".88"/>'
@@ -1927,7 +2050,41 @@ function obRender(){
     $('#vZ').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,5);});
     $('#vD').addEventListener('input',function(){let x=this.value.replace(/\D/g,'').slice(0,8);if(x.length>=5)x=x.slice(0,2)+'/'+x.slice(2,4)+'/'+x.slice(4);else if(x.length>=3)x=x.slice(0,2)+'/'+x.slice(2);this.value=x;chk();});
     $('#obBack').addEventListener('click',obBack);
-    go.addEventListener('click',function(){if(!chk())return;obName=(($('#vF').value||'')+' '+($('#vL').value||'')).trim();withLoading(this,1100,()=>obGo('plaid'));});
+    go.addEventListener('click',function(){if(!chk())return;obName=(($('#vF').value||'')+' '+($('#vL').value||'')).trim();withLoading(this,1100,()=>obGo('distintro'));});
+  } else if(obKey==='distintro'){
+    c.className='ob-card wide';
+    c.innerHTML=backBtn+'<div class="ob-dist">'+OB_COIN
+      +'<div class="odi-amt">$10,300<span>.00</span></div><div class="odi-cap">Incoming commission, automatically organized</div><div class="odi-stem"></div>'
+      +'<div class="odi-cards">'
+      +'<div class="odi-card"><span class="odi-ic" style="background:rgba(15,163,113,.12);color:#0fa371">'+OB_IC_SAVE+'</span><b>Savings</b><i>40%</i></div>'
+      +'<div class="odi-card"><span class="odi-ic" style="background:rgba(207,148,51,.15);color:#cf9433">'+OB_IC_TAX+'</span><b>Taxes</b><i>30%</i></div>'
+      +'<div class="odi-card"><span class="odi-ic" style="background:rgba(31,155,240,.12);color:#1f9bf0">'+OB_IC_EXP+'</span><b>Expenses</b><i>30%</i></div>'
+      +'</div></div>'
+      +'<h2 class="ob-h" style="margin-top:22px">One commission.<br>Multiple destinations.</h2><p class="ob-sub">Every commission can help you save, budget, and plan ahead — automatically.</p>'
+      +'<button class="btn btn-primary block ob-btn" id="diGo">Connect your bank accounts '+OB_ARROW+'</button>';
+    $('#obBack').addEventListener('click',obBack);
+    $('#diGo').addEventListener('click',()=>obGo('plaidphone'));
+  } else if(obKey==='plaidphone'){
+    c.innerHTML=backBtn+'<div class="ob-plaidhead" style="justify-content:center"><span class="ob-pmark">'+OB_PMARK+'PLAID</span></div>'
+      +'<h2 class="ob-h">Enter your phone number</h2><p class="ob-sub">We’ll text a code to verify it’s you.</p>'
+      +'<div class="ob-phone" style="margin-top:22px"><span class="flag">🇺🇸</span><span class="cc">+1</span><input id="ppPhone" inputmode="numeric" placeholder="(555) 000-0000"></div>'
+      +'<div class="ob-terms">By continuing, you agree to Plaid’s <a>Terms</a> and <a>Privacy Policy</a>.</div>'
+      +'<button class="btn btn-primary block ob-btn" id="ppGo">Continue '+OB_ARROW+'</button>'
+      +'<button class="ob-textbtn" id="ppSkip">Continue without phone number</button>';
+    $('#obBack').addEventListener('click',obBack);
+    $('#ppGo').addEventListener('click',function(){withLoading(this,800,()=>obGo('plaidotp'));});
+    $('#ppSkip').addEventListener('click',()=>obGo('plaid'));
+  } else if(obKey==='plaidotp'){
+    c.innerHTML=backBtn+'<div class="ob-plaidhead" style="justify-content:center"><span class="ob-pmark">'+OB_PMARK+'PLAID</span></div>'
+      +'<h2 class="ob-h">Enter the 6-digit code</h2><p class="ob-sub">We sent it to (•••) •••-7878.</p>'
+      +'<div class="ob-otp" id="ppOtp">'+Array.from({length:6},()=>'<input maxlength="1" inputmode="numeric">').join('')+'</div>'
+      +'<button class="ob-resend" id="ppResend">Resend code</button>'
+      +'<button class="btn btn-primary block ob-btn" id="ppVerify">Verify '+OB_ARROW+'</button>';
+    $('#obBack').addEventListener('click',obBack);
+    const otp=[...c.querySelectorAll('#ppOtp input')];
+    otp.forEach((el,i)=>el.addEventListener('input',()=>{el.value=el.value.replace(/\D/g,'').slice(0,1);if(el.value&&otp[i+1])otp[i+1].focus();}));
+    $('#ppResend').addEventListener('click',()=>showToast('Code resent'));
+    $('#ppVerify').addEventListener('click',function(){withLoading(this,900,()=>obGo('plaid'));});
   } else if(obKey==='plaid'){
     c.className='ob-card wide';
     const rows=OB_PLAID_ACCTS.map((a,i)=>'<button class="ob-acct'+(obSel.includes(i)?' on':'')+'" data-acct="'+i+'">'+obBlogo(a)+'<div class="ainfo"><div class="aname">'+a.bank+(a.rtp?' <span class="ob-rtp">'+OB_CHK+' Instant</span>':'')+'</div><div class="asub">'+a.inst+' · '+a.type+' ••••'+a.last4+'</div></div><div class="abal"><b>'+a.bal+'</b><i>Available</i></div><span class="ob-tick">'+OB_CHK+'</span></button>').join('');
@@ -1946,13 +2103,23 @@ function obRender(){
     c.querySelectorAll('[data-prim]').forEach(b=>b.addEventListener('click',function(){obPrimary=+b.dataset.prim;obRender();}));
     $('#prGo').addEventListener('click',obAfterPrimary);
   } else if(obKey==='card'){
-    const p=obBanks[obPrimary];
-    c.innerHTML=backBtn+OB_WALLET(true)+'<h2 class="ob-h">Add a debit card for instant payouts</h2><p class="ob-sub">'+(p?p.nick:'Your account')+' doesn’t support instant (RTP) deposits. Add a debit card to receive your money in seconds — or skip and use standard ACH.</p>'
-      +'<button class="btn btn-primary block ob-btn" id="cdGo">Add debit card '+OB_ARROW+'</button>'
-      +'<button class="btn btn-ghost block" id="cdSkip" style="margin-top:10px">Skip for now</button>'
-      +'<div class="ob-note">'+OB_LOCK+'Encrypted &amp; tokenized — used only for instant payouts.</div>';
+    c.className='ob-card wide';
+    c.innerHTML=backBtn+'<div class="ob-cardic">'+OB_IC_CARD+'</div>'
+      +'<h2 class="ob-h" style="text-align:left">Get paid even faster</h2><p class="ob-sub" style="text-align:left">Your bank account is ready. Add a debit card to unlock Instant Transfers.</p>'
+      +'<div class="ob-feenote">'+OB_BOLT2+'Instant transfer fee: 1.75% up to $1,500, then $27.</div>'
+      +'<a class="ob-why" id="cdWhy">'+OB_INFO+'Why do I need a debit card?</a>'
+      +'<div class="ob-field"><label>Card number</label><input class="auth-input" id="cdNum" inputmode="numeric" placeholder="1234 5678 9012 3456"></div>'
+      +'<div class="ob-grid3eq"><div class="ob-field" style="margin:0"><label>Expiry</label><input class="auth-input" id="cdExp" placeholder="MM/YY"></div><div class="ob-field" style="margin:0"><label>CVV</label><input class="auth-input" id="cdCvv" inputmode="numeric" placeholder="123"></div><div class="ob-field" style="margin:0"><label>ZIP</label><input class="auth-input" id="cdZip" inputmode="numeric" placeholder="33101"></div></div>'
+      +'<button class="btn btn-primary block ob-btn" id="cdGo" disabled>Continue '+OB_ARROW+'</button>'
+      +'<button class="ob-textbtn" id="cdSkip" style="margin-top:2px">I’ll do it later</button>';
     $('#obBack').addEventListener('click',obBack);
-    $('#cdGo').addEventListener('click',function(){obCardAdded=true;withLoading(this,900,()=>obGo('split'));});
+    const cdGo=$('#cdGo');
+    $('#cdNum').addEventListener('input',function(){this.value=this.value.replace(/[^\d]/g,'').slice(0,16).replace(/(.{4})/g,'$1 ').trim();cdGo.disabled=this.value.replace(/\s/g,'').length<12;});
+    $('#cdExp').addEventListener('input',function(){let x=this.value.replace(/\D/g,'').slice(0,4);if(x.length>=3)x=x.slice(0,2)+'/'+x.slice(2);this.value=x;});
+    $('#cdCvv').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,4);});
+    $('#cdZip').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'').slice(0,5);});
+    $('#cdWhy').addEventListener('click',()=>showToast('Instant Transfers send money to your debit card in seconds — even on weekends.'));
+    cdGo.addEventListener('click',function(){obCardAdded=true;withLoading(this,900,()=>obGo('split'));});
     $('#cdSkip').addEventListener('click',()=>obGo('split'));
   } else if(obKey==='split'){
     const acctName=obBanks[obPrimary]?obBanks[obPrimary].nick:'your account';
