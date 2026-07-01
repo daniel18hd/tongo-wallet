@@ -120,6 +120,66 @@ a{color:inherit;text-decoration:none}
 .bn-item.active{color:var(--accent-ink);background:var(--accent-soft)}
 .bn-item:active{transform:scale(.92)}
 
+/* ===== MOBILE WALLET (redesign, ≤860px) ===== */
+.m-only{display:none}
+.mhead-title{font-size:15px;font-weight:650;color:var(--txt-1);letter-spacing:-.01em;transition:font-size .4s var(--ease)}
+.mhead.c .mhead-title{font-size:13.5px}
+.mhead-actions{display:flex;align-items:center;gap:8px}
+.mh-ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--txt-1);background:var(--surface-3);border:1px solid var(--line);transition:transform .15s var(--ease),background .2s,width .4s var(--ease),height .4s var(--ease);position:relative}
+.mh-ic:active{transform:scale(.9)}
+.mh-ic svg{width:19px;height:19px}
+.mhead.c .mh-ic{width:34px;height:34px}.mhead.c .mh-ic svg{width:17px;height:17px}
+.mh-ic .nub{position:absolute;top:-1px;right:-1px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--nav-bg)}
+
+.m-hero{text-align:center;padding:24px 8px 6px}
+.mh-acct{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--txt-2);margin-bottom:12px}
+.mh-acct .dot-sep{width:3px;height:3px;border-radius:50%;background:var(--txt-3)}
+.mh-amount{font-size:46px;font-weight:730;letter-spacing:-.03em;color:var(--txt-1);line-height:1;font-variant-numeric:tabular-nums}
+.mh-amount .c{font-size:26px;color:var(--txt-3);font-weight:680}
+.mh-balances{margin-top:18px;display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:650;color:var(--txt-1);background:var(--surface-3);border:1px solid var(--line);padding:9px 20px;border-radius:999px;transition:transform .15s var(--ease),background .2s}
+.mh-balances:active{transform:scale(.96)}
+.mh-balances svg{width:15px;height:15px;color:var(--txt-3)}
+.mh-dots{display:flex;gap:6px;justify-content:center;margin-top:20px}
+.mh-dots span{width:6px;height:6px;border-radius:50%;background:var(--line-2)}
+.mh-dots span.on{background:var(--txt-3)}
+
+.m-actions{display:flex;justify-content:space-around;gap:6px;margin-top:24px;padding:0 2px}
+.ma{display:flex;flex-direction:column;align-items:center;gap:9px;flex:1}
+.ma-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:var(--accent-ink);background:var(--accent-soft);transition:transform .15s var(--ease)}
+.ma:active .ma-ic{transform:scale(.9)}
+.ma-ic svg{width:23px;height:23px}
+.ma-lbl{font-size:12.5px;font-weight:600;color:var(--txt-1)}
+
+/* bottom sheets */
+.msheet-scrim{position:fixed;inset:0;z-index:95;background:rgba(8,9,12,.5);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.msheet-scrim.show{opacity:1;pointer-events:auto}
+.msheet{position:fixed;left:0;right:0;bottom:0;z-index:96;background:var(--surface-solid);border-radius:26px 26px 0 0;box-shadow:0 -20px 60px -20px rgba(0,0,0,.4);padding:12px 20px calc(env(safe-area-inset-bottom) + 24px);transform:translateY(101%);transition:transform .42s var(--ease);max-height:90vh;overflow-y:auto}
+.msheet.show{transform:translateY(0)}
+.msheet-grip{width:38px;height:4px;border-radius:99px;background:var(--line-2);margin:2px auto 16px}
+.msheet-title{font-size:20px;font-weight:720;letter-spacing:-.02em;margin-bottom:3px}
+.msheet-sub{font-size:13px;color:var(--txt-3);margin-bottom:18px}
+.mb-row{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}
+.mb-row:last-child{border-bottom:none}
+.mb-ic{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);flex-shrink:0}
+.mb-ic svg{width:22px;height:22px}
+.mb-main{flex:1;min-width:0}
+.mb-name{font-size:14.5px;font-weight:650}
+.mb-sub{font-size:12px;color:var(--txt-3);margin-top:2px}
+.mb-amt{font-size:16px;font-weight:720;font-variant-numeric:tabular-nums;text-align:right}
+.mb-actions{display:flex;gap:10px;margin-top:18px}
+.mb-actions .btn{flex:1}
+.msheet-item{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:15px 2px;border-bottom:1px solid var(--line);font-size:14.5px;font-weight:550;color:var(--txt-1)}
+.msheet-item:last-child{border-bottom:none}
+.msheet-item .mi-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface-3);color:var(--accent-ink);flex-shrink:0}
+.msheet-item .mi-ic svg{width:20px;height:20px}
+.msheet-item .chev{margin-left:auto;color:var(--txt-3);display:flex}
+.msheet .card-widget{margin-top:4px}
+.mchart-empty{text-align:center;padding:14px 10px 6px}
+.mchart-ic{width:66px;height:66px;border-radius:20px;margin:0 auto 16px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink)}
+.mchart-ic svg{width:32px;height:32px}
+.mchart-empty h3{font-size:17px;font-weight:700;margin-bottom:7px}
+.mchart-empty p{font-size:13.5px;color:var(--txt-3);line-height:1.5;max-width:280px;margin:0 auto}
+
 /* layout */
 .app{position:relative;z-index:5;max-width:var(--maxw);margin:0 auto;padding:calc(var(--nav-h) + 36px) 24px 80px}
 .page{display:none;animation:pageIn .5s var(--ease) both}.page.active{display:block}
@@ -787,6 +847,9 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   .nav{display:none}.mhead{display:flex}.bottomnav{display:flex}
   .toast{bottom:calc(env(safe-area-inset-bottom) + 92px)}
   .app{max-width:100%;padding:calc(env(safe-area-inset-top) + 84px) 16px calc(env(safe-area-inset-bottom) + 104px);overflow-x:hidden}
+  .m-only{display:block}
+  #page-wallet .page-head,#page-wallet .wallet-top{display:none}
+  #page-wallet .sec{margin-top:26px}
   .wallet-top{grid-template-columns:1fr}
   .card-wrap{max-width:420px;margin:0 auto;width:100%}
   .cols-2{grid-template-columns:1fr}
@@ -1088,13 +1151,29 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 </nav>
 
 <header class="mhead" id="mhead">
-  <span class="logo" data-logo></span>
   <button class="mprofile" id="mprofileBtn" data-avatar aria-label="Profile">BH</button>
+  <span class="mhead-title" id="mheadTitle">Wallet</span>
+  <div class="mhead-actions">
+    <button class="mh-ic" id="mChartBtn" aria-label="Insights"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10M12 20V4M18 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="nub"></span></button>
+    <button class="mh-ic" id="mCardBtn" aria-label="Card"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12.5" rx="2.6" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.8"/></svg></button>
+  </div>
 </header>
 
 <main class="app">
   <!-- WALLET -->
   <section class="page active" id="page-wallet">
+    <div class="m-only m-hero">
+      <div class="mh-acct">Personal<span class="dot-sep"></span>MXN</div>
+      <div class="mh-amount tnum" id="mHeroAmt">$22,500<span class="c">.00</span></div>
+      <button class="mh-balances" id="mBalancesBtn">Balances<svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="mh-dots"><span class="on"></span><span></span></div>
+    </div>
+    <div class="m-only m-actions">
+      <button class="ma" id="maReceive"><span class="ma-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ma-lbl">Receive</span></button>
+      <button class="ma" id="maTransfer"><span class="ma-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7h11m0 0l-3-3m3 3l-3 3M17 17H6m0 0l3 3m-3-3l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="ma-lbl">Transfer</span></button>
+      <button class="ma" id="maAdvance"><span class="ma-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span><span class="ma-lbl">Advance</span></button>
+      <button class="ma" id="maMore"><span class="ma-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="18" cy="12" r="1.6" fill="currentColor"/></svg></span><span class="ma-lbl">More</span></button>
+    </div>
     <div class="page-head"><div class="greet">Good morning, Bryan</div><h1 class="page-title">Wallet</h1></div>
     <div class="wallet-top">
       <div class="wt-left">
@@ -1247,6 +1326,54 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   <button class="bn-item" data-nav="transfer"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7h11m0 0l-3-3m3 3l-3 3M17 17H6m0 0l3 3m-3-3l3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Transfer</span></button>
   <button class="bn-item" data-nav="bank"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10l8-5 8 5M5 10v8m14-8v8M9 10v8m6-8v8M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bank</span></button>
 </nav>
+
+<div class="msheet-scrim" id="msheetScrim"></div>
+
+<div class="msheet" id="mBalancesSheet">
+  <div class="msheet-grip"></div>
+  <div class="msheet-title">Balances</div>
+  <div class="msheet-sub">Everything you can access right now.</div>
+  <div class="mb-row">
+    <span class="mb-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8h16v11H4z" stroke="currentColor" stroke-width="1.7"/><path d="M4 8l8-4 8 4M8 19v-4h8v4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+    <div class="mb-main"><div class="mb-name">Commission ready</div><div class="mb-sub" id="mbCommSub">From 3 commissions</div></div>
+    <div class="mb-amt" id="mbCommAmt">$14,500</div>
+  </div>
+  <div class="mb-row">
+    <span class="mb-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span>
+    <div class="mb-main"><div class="mb-name">Cash advance available</div><div class="mb-sub" id="mbAdvSub">$4,500 used of $12,500 limit</div></div>
+    <div class="mb-amt" id="mbAdvAmt">$8,000</div>
+  </div>
+  <div class="mb-actions">
+    <button class="btn btn-ghost" id="mbReceive">Receive commission</button>
+    <button class="btn btn-primary" id="mbAdvance">Request advance</button>
+  </div>
+</div>
+
+<div class="msheet" id="mCardSheet">
+  <div class="msheet-grip"></div>
+  <div class="msheet-title">Your cards</div>
+  <div class="msheet-sub">Manage your advance and credit cards.</div>
+  <div id="mCardBody"></div>
+</div>
+
+<div class="msheet" id="mChartSheet">
+  <div class="msheet-grip"></div>
+  <div class="mchart-empty">
+    <div class="mchart-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10M12 20V4M18 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+    <h3>Insights are coming soon</h3>
+    <p>Soon you'll see your commissions, advances and spending trends over time — right here.</p>
+  </div>
+</div>
+
+<div class="msheet" id="mMoreSheet">
+  <div class="msheet-grip"></div>
+  <div class="msheet-title">More actions</div>
+  <div class="msheet-sub">Everything else you can do.</div>
+  <button class="msheet-item" id="mmTransferAdv"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Transfer advance to account<span class="chev"><svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+  <button class="msheet-item" id="mmCard"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12.5" rx="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.7"/></svg></span>Card details<span class="chev"><svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+  <button class="msheet-item" id="mmBank"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10l8-5 8 5M5 10v8m14-8v8M9 10v8m6-8v8M3 20h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Bank Settings<span class="chev"><svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+  <button class="msheet-item" id="mmPaper"><span class="mi-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5M10 13h6M10 17h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>Request paper check<span class="chev"><svg viewBox="0 0 24 24" fill="none" width="17" height="17"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+</div>
 
 <div class="profile-page" id="profilePage">
   <button class="pp-back" id="ppBack"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button>
@@ -2226,6 +2353,50 @@ let io;
 function runReveals(){const items=$$('.page.active .reveal:not(.in)');if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(el=>el.classList.add('in'));return;}if(io)io.disconnect();io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const sibs=$$('.reveal',e.target.parentElement);const d=Math.max(0,sibs.indexOf(e.target))*60;setTimeout(()=>e.target.classList.add('in'),d);io.unobserve(e.target);}});},{threshold:.08,rootMargin:'0px 0px -5% 0px'});items.forEach(el=>io.observe(el));}
 const barObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.style.width=e.target.dataset.w;barObs.unobserve(e.target);}});});
 $$('.m-bar i').forEach(b=>barObs.observe(b));
+/* ===== MOBILE WALLET REDESIGN ===== */
+(function(){
+  const scrim=$('#msheetScrim');
+  const sheets={balances:$('#mBalancesSheet'),card:$('#mCardSheet'),chart:$('#mChartSheet'),more:$('#mMoreSheet')};
+  let openSheet=null;
+  const cw=$('.card-widget'),cwParent=cw?cw.parentNode:null,cwNext=cw?cw.nextSibling:null,cardBody=$('#mCardBody');
+  let cwOpen=false;
+  function restoreCard(){if(cw&&cwOpen){if(cwNext)cwParent.insertBefore(cw,cwNext);else cwParent.appendChild(cw);cwOpen=false;}}
+  function moveCardToSheet(){if(cw&&!cwOpen){cw.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));cardBody.appendChild(cw);cwOpen=true;}}
+  function sheetOpen(key){if(!sheets[key])return;if(openSheet&&openSheet!==key)sheets[openSheet].classList.remove('show');openSheet=key;scrim.classList.add('show');sheets[key].classList.add('show');}
+  function sheetClose(){if(openSheet){sheets[openSheet].classList.remove('show');openSheet=null;}scrim.classList.remove('show');if(cwOpen)setTimeout(restoreCard,420);}
+  function openCardSheet(){moveCardToSheet();sheetOpen('card');}
+  scrim.addEventListener('click',sheetClose);
+  $$('.msheet-grip').forEach(g=>g.addEventListener('click',sheetClose));
+
+  function parseMoneyEl(el,useFirst){if(!el)return 0;const t=(useFirst&&el.firstChild?el.firstChild.textContent:el.textContent)||'';return +t.replace(/[^\d]/g,'')||0;}
+  function refreshHero(){
+    const comm=parseMoneyEl($('.balance-card .bc-amount'),true);
+    const adv=parseMoneyEl($('.adv-split .adv-amt'),false);
+    const amt=$('#mHeroAmt');if(amt)amt.innerHTML='$'+(comm+adv).toLocaleString('en-US')+'<span class="c">.00</span>';
+    const ca=$('#mbCommAmt');if(ca)ca.textContent='$'+comm.toLocaleString('en-US');
+    const aa=$('#mbAdvAmt');if(aa)aa.textContent='$'+adv.toLocaleString('en-US');
+  }
+  refreshHero();window.refreshMHero=refreshHero;
+
+  const clickEl=id=>{const e=$(id);if(e)e.click();};
+  const mt=$('#mheadTitle');function setTitle(t){if(mt)mt.textContent=t;}
+  const maR=$('#maReceive');if(maR)maR.addEventListener('click',()=>clickEl('#receiveBtn'));
+  const maT=$('#maTransfer');if(maT)maT.addEventListener('click',()=>{setTitle('Transfer');go('transfer');});
+  const maA=$('#maAdvance');if(maA)maA.addEventListener('click',()=>clickEl('#reqAdvBtn'));
+  const maM=$('#maMore');if(maM)maM.addEventListener('click',()=>sheetOpen('more'));
+  const mCh=$('#mChartBtn');if(mCh)mCh.addEventListener('click',()=>sheetOpen('chart'));
+  const mCd=$('#mCardBtn');if(mCd)mCd.addEventListener('click',openCardSheet);
+  const mBal=$('#mBalancesBtn');if(mBal)mBal.addEventListener('click',()=>sheetOpen('balances'));
+  const mbR=$('#mbReceive');if(mbR)mbR.addEventListener('click',()=>{sheetClose();clickEl('#receiveBtn');});
+  const mbA=$('#mbAdvance');if(mbA)mbA.addEventListener('click',()=>{sheetClose();clickEl('#reqAdvBtn');});
+  const mmT=$('#mmTransferAdv');if(mmT)mmT.addEventListener('click',()=>{sheetClose();clickEl('#advTransferBtn');});
+  const mmC=$('#mmCard');if(mmC)mmC.addEventListener('click',()=>{sheets.more.classList.remove('show');openSheet=null;openCardSheet();});
+  const mmB=$('#mmBank');if(mmB)mmB.addEventListener('click',()=>{sheetClose();setTitle('Bank');go('bank');});
+  const mmP=$('#mmPaper');if(mmP)mmP.addEventListener('click',()=>{sheetClose();clickEl('#paperBtn');});
+
+  const titles={wallet:'Wallet',transfer:'Transfer',bank:'Bank'};
+  document.addEventListener('click',e=>{const t=e.target.closest('[data-nav]');if(t&&titles[t.dataset.nav])setTitle(titles[t.dataset.nav]);});
+})();
 runReveals();go('wallet');
 })();
 </script>
