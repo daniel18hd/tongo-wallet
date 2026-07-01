@@ -604,10 +604,10 @@ a{color:inherit;text-decoration:none}
 .flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;overflow:hidden}
 .flip-face .dcard{height:100%}
 .flip-face .dcard svg{width:100%;height:100%;max-width:100%;display:block}
-.flip-back{transform:rotateY(180deg);background:var(--card-grad,linear-gradient(135deg,#755BE8,#432DA8))}
+.flip-back{transform:rotateY(180deg);background:var(--card-grad,linear-gradient(135deg,#4E36C6,#281A6E))}
 .flip.frozen .flip-front .dcard{filter:saturate(.4) brightness(.93)}
 .flip.frozen .flip-front::after{content:"";position:absolute;inset:0;background:rgba(220,230,245,.16);pointer-events:none}
-.dcard-back{position:relative;height:100%;border-radius:18px;overflow:hidden;background:var(--card-grad,linear-gradient(135deg,#755BE8,#432DA8));color:#fff;padding:6.5cqw;display:flex;flex-direction:column;box-shadow:0 24px 48px -22px var(--accent-glow)}
+.dcard-back{position:relative;height:100%;border-radius:18px;overflow:hidden;background:var(--card-grad,linear-gradient(135deg,#4E36C6,#281A6E));color:#fff;padding:6.5cqw;display:flex;flex-direction:column;box-shadow:0 24px 48px -22px var(--accent-glow)}
 .cb-stripe{height:13cqw;background:#1a1820;margin:5cqw -6.5cqw 0}
 .cb-num{font-family:'Geist',system-ui,sans-serif;font-weight:500;font-variant-numeric:tabular-nums;font-size:5.2cqw;letter-spacing:.03em;margin-top:8.5cqw;display:flex;align-items:center;gap:3cqw}
 .cb-row{display:flex;gap:11cqw;margin-top:6cqw}
@@ -806,7 +806,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 .auth{position:fixed;inset:0;z-index:300;overflow:auto;background:var(--bg)}
 .auth.hide{display:none}
 .auth-split{display:grid;grid-template-columns:1.05fr 1fr;min-height:100%}
-.auth-aside{position:relative;overflow:hidden;display:flex;padding:48px;color:#fff;background:linear-gradient(155deg,var(--accent),var(--accent-2))}
+.auth-aside{position:relative;overflow:hidden;display:flex;padding:48px;color:#fff;background:var(--card-grad,linear-gradient(155deg,#4E36C6,#281A6E))}
 .auth-aside::after{content:"";position:absolute;inset:0;background:radial-gradient(620px 440px at 88% 6%,rgba(255,255,255,.20),transparent 60%),radial-gradient(560px 420px at -5% 108%,rgba(0,0,0,.22),transparent 60%);pointer-events:none}
 .aa-in{position:relative;display:flex;flex-direction:column;width:100%;max-width:460px;margin:auto}
 .aa-in .logo svg,.aa-in .logo img{height:40px}
@@ -816,7 +816,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 .aa-title{font-size:46px;font-weight:680;letter-spacing:-.04em;line-height:1.06;max-width:460px}
 /* premium product illustration: real dashboard card + distribution chip */
 .aa-art{position:relative;margin-top:54px;width:330px;max-width:100%;padding-bottom:46px}
-.aa-prodcard{position:relative;z-index:1;border-radius:16px;transform:rotate(-2.5deg);box-shadow:0 30px 64px -22px rgba(0,0,0,.55)}
+.aa-prodcard{position:relative;z-index:1;border-radius:16px;transform:rotate(-2.5deg)}
 .aa-prodcard svg{display:block;width:100%;height:auto;border-radius:16px}
 .art-card{position:absolute;z-index:2;right:-26px;bottom:0;width:236px;background:#fff;color:#101828;border-radius:16px;padding:14px 16px;transform:rotate(1.5deg);box-shadow:0 26px 50px -18px rgba(0,0,0,.5)}
 .art-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
@@ -1440,7 +1440,7 @@ applyTheme();
 /* BRAND ENGINE */
 const TONGO={id:'tongo',name:'Tongo',primary:'#6d4aff',secondary:'#9b6bff'};
 const PRESETS=[
-  {id:'tongo',name:'Tongo',primary:'#6d4aff',secondary:'#9b6bff',card:C.cards.tongo,grad:'linear-gradient(135deg,#755BE8 0%,#432DA8 100%)'},
+  {id:'tongo',name:'Tongo',primary:'#6d4aff',secondary:'#9b6bff',card:C.cards.tongo,grad:'linear-gradient(135deg,#4E36C6 0%,#281A6E 100%)'},
   {id:'fathom',name:'Fathom Realty',primary:'#c40000',secondary:'#e23d3d',card:C.cards.fathom,grad:'linear-gradient(135deg,#C40000 0%,#7A0000 100%)'},
   {id:'exit',name:'EXIT Realty',primary:'#028c99',secondary:'#22b3bd',card:C.cards.exit,grad:'linear-gradient(135deg,#028C99 0%,#01636B 100%)'},
   {id:'custom',name:'Custom',primary:'#6d4aff',secondary:'#9b6bff',card:null,grad:null}
