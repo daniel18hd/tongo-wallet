@@ -104,15 +104,15 @@ a{color:inherit;text-decoration:none}
 .dd-item.danger:hover{color:var(--neg)}
 
 /* mobile header + bottom nav */
-.mhead{display:none;position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:14px;right:14px;z-index:60;height:54px;padding:0 8px 0 16px;border-radius:18px;border:1px solid var(--line);box-shadow:var(--sh-card);align-items:center;justify-content:space-between;background:var(--nav-bg);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);transition:height .4s var(--ease),top .4s var(--ease),box-shadow .4s,transform .4s var(--ease);transform-origin:top center}
+.mhead{display:none;position:fixed;top:calc(env(safe-area-inset-top) + 10px);left:14px;right:14px;z-index:60;height:54px;padding:0 8px 0 16px;border-radius:18px;border:1px solid var(--line-2);box-shadow:0 10px 30px -10px rgba(0,0,0,.22),0 2px 8px -4px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.14);align-items:center;justify-content:space-between;background:var(--nav-bg);backdrop-filter:blur(32px) saturate(200%);-webkit-backdrop-filter:blur(32px) saturate(200%);transition:height .4s var(--ease),top .4s var(--ease),box-shadow .4s,transform .4s var(--ease);transform-origin:top center}
 .mhead.c{height:46px;top:calc(env(safe-area-inset-top) + 6px);box-shadow:var(--sh);transform:scale(.985)}
 .mhead .logo svg,.mhead .logo img{height:23px;transition:height .4s var(--ease)}
 .mhead.c .logo svg,.mhead.c .logo img{height:19px}
 .mhead .brandword{font-size:18px}.mhead.c .brandword{font-size:16px}
 .mprofile{width:36px;height:36px;border-radius:50%;background:linear-gradient(140deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:600;font-size:12.5px;color:#fff;flex-shrink:0;box-shadow:0 5px 14px -6px var(--accent-glow);overflow:hidden}
 .mprofile img{width:100%;height:100%;object-fit:cover}
-.bottomnav{display:none;position:fixed;bottom:calc(env(safe-area-inset-bottom) + 12px);left:16px;right:16px;z-index:60;height:62px;padding:7px;border-radius:22px;border:1px solid var(--line);box-shadow:var(--sh-pop);align-items:stretch;background:var(--nav-bg);overflow:hidden;isolation:isolate;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:height .4s var(--ease),padding .4s var(--ease),border-radius .4s var(--ease),bottom .4s var(--ease)}
-.bottomnav::before{content:"";position:absolute;inset:0;z-index:0;backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);pointer-events:none}
+.bottomnav{display:none;position:fixed;bottom:calc(env(safe-area-inset-bottom) + 12px);left:16px;right:16px;z-index:60;height:62px;padding:7px;border-radius:22px;border:1px solid var(--line-2);box-shadow:0 16px 40px -12px rgba(0,0,0,.32),0 4px 12px -6px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.14);align-items:stretch;background:var(--nav-bg);overflow:hidden;isolation:isolate;-webkit-transform:translateZ(0);transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:height .4s var(--ease),padding .4s var(--ease),border-radius .4s var(--ease),bottom .4s var(--ease)}
+.bottomnav::before{content:"";position:absolute;inset:0;z-index:0;backdrop-filter:blur(34px) saturate(210%);-webkit-backdrop-filter:blur(34px) saturate(210%);pointer-events:none}
 .bottomnav.c{height:50px;padding:5px;border-radius:18px;bottom:calc(env(safe-area-inset-bottom) + 8px)}
 .bn-item{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:15px;color:var(--txt-3);transition:color .22s,background .22s,transform .12s}
 .bn-item svg{width:22px;height:22px;transition:width .4s var(--ease),height .4s var(--ease)}.bn-item span{font-size:10.5px;font-weight:550;transition:font-size .4s var(--ease),opacity .3s,max-height .4s var(--ease);overflow:hidden}
@@ -179,6 +179,27 @@ a{color:inherit;text-decoration:none}
 .mchart-ic svg{width:32px;height:32px}
 .mchart-empty h3{font-size:17px;font-weight:700;margin-bottom:7px}
 .mchart-empty p{font-size:13.5px;color:var(--txt-3);line-height:1.5;max-width:280px;margin:0 auto}
+
+/* mobile activity widget (single-line) */
+.m-activity{padding:4px 16px 6px;margin-top:26px}
+.mav-head{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--txt-3);padding:10px 0 4px}
+.mav-row{display:flex;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
+.mav-dotslot{width:6px;flex-shrink:0;display:flex;justify-content:center}
+.mav-dotslot .d{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.mav-ic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.mav-ic svg{width:17px;height:17px}
+.mav-ic.t-comm{background:rgba(15,163,113,.14);color:#0fa371}
+.mav-ic.t-adv{background:var(--accent-soft);color:var(--accent-ink)}
+.mav-ic.t-card{background:var(--surface-3);color:var(--txt-2)}
+.mav-ic.t-transfer{background:rgba(31,155,240,.14);color:#1f9bf0}
+.mav-main{flex:1;min-width:0}
+.mav-desc{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mav-amt{font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;flex-shrink:0;color:var(--txt-1);white-space:nowrap}
+.mav-amt.pos{color:var(--pos)}
+.mav-empty{text-align:center;color:var(--txt-3);font-size:13px;padding:22px 0}
+.mav-all{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;padding:15px 0 5px;font-size:13px;font-weight:650;color:var(--accent-ink)}
+.mav-all svg{width:15px;height:15px}
+.cardpg-actwrap{margin-top:24px}
 
 /* layout */
 .app{position:relative;z-index:5;max-width:var(--maxw);margin:0 auto;padding:calc(var(--nav-h) + 36px) 24px 80px}
@@ -313,7 +334,7 @@ a{color:inherit;text-decoration:none}
 .pill.warn{background:rgba(193,138,30,.15);color:#a9750f}
 [data-theme="dark"] .pill.warn{background:rgba(245,196,90,.16);color:#f0c258}
 /* splash (app launch) */
-#splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,var(--accent),var(--accent-2));transition:opacity .45s var(--ease),visibility .45s}
+#splash{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,#5B42D6,#301F84);transition:opacity .45s var(--ease),visibility .45s}
 #splash.hide{opacity:0;visibility:hidden;pointer-events:none}
 .splash-logo{display:flex;align-items:center;justify-content:center;animation:splashpop .6s var(--ease) both}
 .splash-logo svg,.splash-logo img{height:46px;width:auto;filter:brightness(0) invert(1)}
@@ -682,27 +703,29 @@ a{color:inherit;text-decoration:none}
 .cc-btn:hover .ic{background:var(--line-2)}
 .cc-btn:active .ic{transform:scale(.92)}
 .cc-btn:disabled{opacity:.4;cursor:default;pointer-events:none}
-/* swipeable card deck — 3D turntable */
-.deck{position:relative;perspective:1700px;aspect-ratio:1.586/1}
-.deck-rot{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.45,.05,.2,1)}
-.deck-rot.flip-b{transform:rotateY(180deg)}
-.deck-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.deck-b{transform:rotateY(180deg)}
-.deck-face .flip,.deck-face .dcard{width:100%;height:100%}
-.credit-dcard{position:relative;border-radius:18px;overflow:hidden;filter:grayscale(1) brightness(.66) contrast(1.1)}
+/* swipeable card deck — horizontal carousel with peek */
+.deck{position:relative;overflow:hidden}
+.deck-track{display:flex;align-items:stretch;transition:transform .5s cubic-bezier(.32,.72,0,1);will-change:transform;touch-action:pan-y}
+.deck-track.dragging{transition:none}
+.deck-slide{position:relative;flex:0 0 82%;margin-right:3%;aspect-ratio:1.586/1;transition:opacity .4s var(--ease)}
+.deck-slide:last-child{margin-right:0}
+.deck-slide .flip,.deck-slide .dcard,.deck-slide .credit-dcard{width:100%;height:100%}
+.credit-dcard{border-radius:18px;overflow:hidden;filter:grayscale(1) brightness(.66) contrast(1.1)}
 .credit-dcard svg{display:block;width:100%;height:100%}
 .cc-ribbon{position:absolute;top:8%;right:6.5%;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.5);padding:3px 9px;border-radius:999px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
-.cs-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
-.cs-arrow{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--txt-2);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
-.cs-arrow svg{width:16px;height:16px}
-.cs-arrow:hover{border-color:var(--line-2);color:var(--txt);background:var(--surface-3)}
-.cs-dots{display:flex;gap:7px;align-items:center}
+.cs-dots{display:flex;gap:7px;align-items:center;justify-content:center;margin-top:16px}
 .cs-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);border:none;cursor:pointer;padding:0;transition:width .3s var(--ease),background .3s}
 .cs-dot.is-on{width:20px;background:var(--accent-ink);border-radius:99px}
-.cc-credit{margin-top:2px;text-align:center}
-.cc-credit .btn{width:100%}
-.cc-credit-note{font-size:12px;color:var(--txt-3);margin-top:11px;line-height:1.5}
-.cc-credit.done .btn{background:var(--pos-soft);color:var(--pos);pointer-events:none;box-shadow:none}
+/* early access modal */
+.early-hero{text-align:center;margin-bottom:18px}
+.early-badge{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);padding:4px 11px;border-radius:999px;margin-bottom:12px}
+.early-list{display:flex;flex-direction:column;gap:15px}
+.early-item{display:flex;align-items:flex-start;gap:13px}
+.ei-ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);flex-shrink:0}
+.ei-ic svg{width:19px;height:19px}
+.ei-tx b{display:block;font-size:14px;font-weight:650}
+.ei-tx span{display:block;font-size:12.5px;color:var(--txt-3);margin-top:2px;line-height:1.45}
+.early-fine{font-size:11.5px;color:var(--txt-3);text-align:center;margin-top:12px}
 
 /* ===== BANK: toggle method, distributions, paper check ===== */
 .lk{color:var(--accent-ink);font-weight:600;font-size:13px;cursor:pointer;background:none;border:none}
@@ -849,8 +872,7 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   .app{max-width:100%;padding:calc(env(safe-area-inset-top) + 84px) 16px calc(env(safe-area-inset-bottom) + 104px);overflow-x:hidden}
   .m-only{display:block}
   .m-actions{display:flex}
-  #page-wallet .page-head,#page-wallet .wallet-top{display:none}
-  #page-wallet .sec{margin-top:26px}
+  #page-wallet .page-head,#page-wallet .wallet-top,#page-wallet>.sec,#page-wallet>#actFilter,#page-wallet>.act-mobile{display:none}
   .wallet-top{grid-template-columns:1fr}
   .card-wrap{max-width:420px;margin:0 auto;width:100%}
   .cols-2{grid-template-columns:1fr}
@@ -1209,8 +1231,8 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
       <div class="cw-title" id="cwTitle">Advance Card</div>
       <div class="card-wrap reveal">
         <div class="deck" id="cardStack">
-        <div class="deck-rot" id="deckRot">
-        <div class="deck-face deck-a">
+        <div class="deck-track" id="deckTrack">
+        <div class="deck-slide">
         <div class="flip" id="cardFlip">
           <div class="flip-inner">
             <div class="flip-face flip-front"><div class="dcard" id="dcard"><div class="logo-ovl" id="cardLogoOvl"><img alt=""></div></div></div>
@@ -1227,21 +1249,16 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
           </div>
         </div>
         </div>
-        <div class="deck-face deck-b"><div class="dcard credit-dcard" id="ccDcard"></div><span class="cc-ribbon" id="ccRibbon">Early access</span></div>
+        <div class="deck-slide"><div class="dcard credit-dcard" id="ccDcard"></div><span class="cc-ribbon" id="ccRibbon">Early access</span></div>
         </div>
         </div>
-        <div class="cs-nav" id="csNav">
-          <button class="cs-arrow" id="csPrev" aria-label="Previous card"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <div class="cs-dots"><button class="cs-dot is-on" data-go="0" aria-label="Advance card"></button><button class="cs-dot" data-go="1" aria-label="Credit card"></button></div>
-          <button class="cs-arrow" id="csNext" aria-label="Next card"><svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-        </div>
+        <div class="cs-dots" id="csDots"><button class="cs-dot is-on" data-go="0" aria-label="Advance card"></button><button class="cs-dot" data-go="1" aria-label="Credit card"></button></div>
         <div class="card-controls" id="cardControls">
           <button class="cc-btn" id="showDetailsBtn"><span class="ic" id="showIc"><svg viewBox="0 0 24 24" fill="none"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></span><span id="showLbl">Show details</span></button>
           <button class="cc-btn" id="freezeBtn"><span class="ic" id="freezeIc"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 7l14 10M19 7L5 17M3.5 12h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><span id="freezeLbl">Freeze card</span></button>
         </div>
-        <div class="cc-credit" id="ccCredit" style="display:none">
-          <button class="btn btn-primary block" id="reqEarlyBtn">Request early access</button>
-          <div class="cc-credit-note">Be first to spend on credit, build history, and unlock higher limits — drawn from your future commissions.</div>
+        <div class="card-controls" id="creditControls" style="display:none">
+          <button class="cc-btn" id="reqEarlyBtn"><span class="ic" id="earlyIc"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span><span id="earlyLbl">Request early access</span></button>
         </div>
       </div>
       </div>
@@ -1255,6 +1272,11 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
       <button class="chip" data-f="Card Purchase">Card</button>
     </div>
     <div class="card reveal act-mobile"><div class="tbl-scroll"><table class="activity-table"><thead><tr><th>Date</th><th>Description</th><th>Type</th><th class="ta-r">Amount</th><th class="ta-r">Status</th></tr></thead><tbody id="actBody"></tbody></table></div></div>
+    <div class="m-only card m-activity reveal">
+      <div class="mav-head">Activity</div>
+      <div id="mActBody"></div>
+      <button class="mav-all" id="mViewAllBtn">View all activity<svg viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
   </section>
 
   <!-- TRANSFER -->
@@ -1350,13 +1372,6 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   </div>
 </div>
 
-<div class="msheet" id="mCardSheet">
-  <div class="msheet-grip"></div>
-  <div class="msheet-title">Your cards</div>
-  <div class="msheet-sub">Manage your advance and credit cards.</div>
-  <div id="mCardBody"></div>
-</div>
-
 <div class="msheet" id="mChartSheet">
   <div class="msheet-grip"></div>
   <div class="mchart-empty">
@@ -1404,6 +1419,16 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
   </div>
 </div>
 
+<div class="profile-page" id="cardPage">
+  <div class="fs-inner">
+    <div class="fs-head"><button class="pp-back" id="cardBack"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button><h1 class="fs-title">Your cards</h1></div>
+    <div id="mCardBody"></div>
+    <div class="cardpg-actwrap">
+      <div class="card m-activity"><div class="mav-head">Card activity</div><div id="cardActBody"></div></div>
+    </div>
+  </div>
+</div>
+
 <div class="pdf-view" id="pdfView">
   <div class="pdf-head"><button class="pp-back" id="pdfBack"><svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Back</button><div class="fs-title">Wallet &amp; Advance Agreement</div></div>
   <iframe id="pdfFrame" title="Contract" src=""></iframe>
@@ -1412,6 +1437,16 @@ button.d-ico::after{content:"";position:absolute;right:-3px;bottom:-3px;width:16
 <div class="overlay" id="overlay"></div>
 <div class="modal" id="modal-otp"><button class="close" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><h3>Verify it's you</h3><p class="sub">We sent a 6-digit code to your phone. Enter it to confirm the change.</p><div class="otp" id="otpInputs"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"><input maxlength="1" inputmode="numeric"></div><button class="btn btn-primary block" id="otpConfirm">Confirm</button></div>
 <div class="modal" id="modal-personal"><button class="close" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><h3>Personal information</h3><p class="sub">Email and phone changes require OTP verification.</p><div style="margin-top:20px"><div class="field"><label>Full name</label><input id="nameField" value="Bryan Haskins"></div><div class="field"><label>Email</label><div class="edit-wrap"><input id="emailField" value="bhaskins@fathomrealty.com"><span class="verify-tag"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span></div></div><div class="field"><label>Phone</label><div class="edit-wrap"><input id="phoneField" value="+1 (512) 555-0148"><span class="verify-tag"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Verified</span></div></div></div><button class="btn btn-primary block save-btn" id="savePersonal">Save changes</button></div>
+<div class="modal" id="modal-early"><button class="close" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <div class="early-hero"><span class="early-badge">Coming soon</span><h3>Tongo Credit Card</h3><p class="sub">Spend on credit against your future commissions — early access is rolling out to select agents.</p></div>
+  <div class="early-list">
+    <div class="early-item"><span class="ei-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg></span><div class="ei-tx"><b>Spend before you close</b><span>Draw credit against upcoming, pre-approved commissions.</span></div></div>
+    <div class="early-item"><span class="ei-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 20V10M12 20V4M18 20v-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><div class="ei-tx"><b>Build credit history</b><span>On-time repayments strengthen your profile.</span></div></div>
+    <div class="early-item"><span class="ei-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div class="ei-tx"><b>Higher limits over time</b><span>Your line grows as you fund more deals.</span></div></div>
+  </div>
+  <button class="btn btn-primary block" id="earlyJoin" style="margin-top:20px">Join the waitlist</button>
+  <div class="early-fine">We'll notify you the moment your card is ready. No commitment.</div>
+</div>
 <div class="modal" id="modal-terms"><button class="close" data-close><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><h3>Product terms &amp; contract</h3><p class="sub">Your Tongo wallet &amp; advance agreement, last updated Jan 2026.</p>
   <button class="pdf-open" id="termsPdfBtn"><span class="pdf-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="currentColor" stroke-width="1.7"/></svg></span><span class="pdf-meta"><span class="pdf-t">Wallet &amp; Advance Agreement</span><span class="pdf-s">PDF · 1 page · tap to view full screen</span></span><svg class="pdf-chev" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   <button class="btn btn-ghost block" data-close style="margin-top:14px">Close</button></div>
@@ -1868,27 +1903,33 @@ $('#showDetailsBtn').addEventListener('click',()=>{if(frozen)return;flipped=!fli
 $('#freezeBtn').addEventListener('click',()=>{frozen=!frozen;if(frozen){flipped=false;cardFlip.classList.remove('flipped');$('#showLbl').textContent='Show details';$('#showIc').innerHTML=eyeSvg;}cardFlip.classList.toggle('frozen',frozen);$('#freezeLbl').textContent=frozen?'Unfreeze card':'Freeze card';$('#freezeIc').innerHTML=frozen?unfreezeSvg:freezeSvg;$('#showDetailsBtn').disabled=frozen;showToast(frozen?'Card frozen':'Card unfrozen');});
 /* SWIPEABLE CARD DECK — 3D turntable (advance + early-access credit card) */
 (function(){
-  const deck=$('#cardStack');if(!deck)return;
-  const rot=$('#deckRot');
-  const dots=[...document.querySelectorAll('.cs-dot')];
-  let cur=0,earlyDone=false;
-  function setCard(i){i=Math.max(0,Math.min(1,i));cur=i;
-    if(rot)rot.classList.toggle('flip-b',i===1);
+  const deck=$('#cardStack'),track=$('#deckTrack');if(!deck||!track)return;
+  const slides=[...track.children];
+  const dots=[...document.querySelectorAll('#csDots .cs-dot')];
+  let cur=0,earlyDone=false,dragging=false,startX=0,baseX=0,moved=false;
+  function metrics(){const w=deck.clientWidth||320;const sw=w*0.82,gap=w*0.03;return {w,sw,step:sw+gap,peek:(w-sw)/2};}
+  function offsetFor(i){const m=metrics();return i*m.step-m.peek;}
+  function apply(x){track.style.transform='translateX('+(-x)+'px)';}
+  function setCard(i,animate){i=Math.max(0,Math.min(slides.length-1,i));cur=i;
+    if(animate)track.classList.remove('dragging');else track.classList.add('dragging');
+    apply(offsetFor(i));
     dots.forEach((d,k)=>d.classList.toggle('is-on',k===i));
+    deck.dataset.i=i;
     const t=$('#cwTitle');if(t)t.textContent=i===0?'Advance Card':'Credit Card';
     const cc=$('#cardControls');if(cc)cc.style.display=i===0?'':'none';
-    const ce=$('#ccCredit');if(ce)ce.style.display=i===1?'':'none';}
-  setCard(0);
-  dots.forEach(d=>d.addEventListener('click',()=>setCard(+d.dataset.go)));
-  const pv=$('#csPrev'),nx=$('#csNext');
-  if(pv)pv.addEventListener('click',()=>setCard(cur-1));
-  if(nx)nx.addEventListener('click',()=>setCard(cur+1));
-  let sx=0,sw=false;
-  deck.addEventListener('pointerdown',e=>{sx=e.clientX;sw=true;});
-  deck.addEventListener('pointerup',e=>{if(!sw)return;sw=false;const dx=e.clientX-sx;if(Math.abs(dx)>40)setCard(dx<0?cur+1:cur-1);});
-  deck.addEventListener('pointercancel',()=>{sw=false;});
+    const ce=$('#creditControls');if(ce)ce.style.display=i===1?'':'none';}
+  function relayout(){track.classList.add('dragging');apply(offsetFor(cur));requestAnimationFrame(()=>{track.classList.remove('dragging');});}
+  window.relayoutDeck=relayout;
+  requestAnimationFrame(()=>{track.classList.add('dragging');apply(offsetFor(0));requestAnimationFrame(()=>track.classList.remove('dragging'));});
+  window.addEventListener('resize',relayout);
+  dots.forEach(d=>d.addEventListener('click',()=>setCard(+d.dataset.go,true)));
+  deck.addEventListener('pointerdown',e=>{dragging=true;moved=false;startX=e.clientX;baseX=offsetFor(cur);track.classList.add('dragging');});
+  window.addEventListener('pointermove',e=>{if(!dragging)return;const dx=e.clientX-startX;if(Math.abs(dx)>4)moved=true;apply(baseX-dx);});
+  window.addEventListener('pointerup',e=>{if(!dragging)return;dragging=false;const dx=e.clientX-startX;const th=metrics().w*0.15;if(dx<-th&&cur<slides.length-1)setCard(cur+1,true);else if(dx>th&&cur>0)setCard(cur-1,true);else{track.classList.remove('dragging');apply(offsetFor(cur));}});
   const req=$('#reqEarlyBtn');
-  if(req)req.addEventListener('click',function(){if(earlyDone)return;withLoading(this,1000,()=>{earlyDone=true;const ce=$('#ccCredit');if(ce)ce.classList.add('done');req.textContent='✓ You’re on the waitlist';const rb=$('#ccRibbon');if(rb)rb.textContent='Waitlisted';showToast('You’re on the early-access waitlist');});});
+  if(req)req.addEventListener('click',()=>{if(earlyDone)return;openModal('early');});
+  const join=$('#earlyJoin');
+  if(join)join.addEventListener('click',function(){withLoading(this,900,()=>{earlyDone=true;closeModal();const rb=$('#ccRibbon');if(rb)rb.textContent='Waitlisted';const lb=$('#earlyLbl');if(lb)lb.textContent='On the waitlist';const ic=$('#earlyIc');if(ic)ic.innerHTML='<svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';if(req)req.disabled=true;showToast('You’re on the early-access waitlist');});});
 })();
 document.addEventListener('click',e=>{const c=e.target.closest('[data-copy]');if(c){copy(c.dataset.copy,'Copied to clipboard');}});
 
@@ -2357,15 +2398,16 @@ $$('.m-bar i').forEach(b=>barObs.observe(b));
 /* ===== MOBILE WALLET REDESIGN ===== */
 (function(){
   const scrim=$('#msheetScrim');
-  const sheets={balances:$('#mBalancesSheet'),card:$('#mCardSheet'),chart:$('#mChartSheet'),more:$('#mMoreSheet')};
+  const sheets={balances:$('#mBalancesSheet'),chart:$('#mChartSheet'),more:$('#mMoreSheet')};
   let openSheet=null;
-  const cw=$('.card-widget'),cwParent=cw?cw.parentNode:null,cwNext=cw?cw.nextSibling:null,cardBody=$('#mCardBody');
+  const cw=$('.card-widget'),cwParent=cw?cw.parentNode:null,cwNext=cw?cw.nextSibling:null,cardBody=$('#mCardBody'),cardPage=$('#cardPage');
   let cwOpen=false;
   function restoreCard(){if(cw&&cwOpen){if(cwNext)cwParent.insertBefore(cw,cwNext);else cwParent.appendChild(cw);cwOpen=false;}}
-  function moveCardToSheet(){if(cw&&!cwOpen){cw.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));cardBody.appendChild(cw);cwOpen=true;}}
+  function moveCard(){if(cw&&!cwOpen){cw.querySelectorAll('.reveal').forEach(r=>r.classList.add('in'));cardBody.appendChild(cw);cwOpen=true;}}
   function sheetOpen(key){if(!sheets[key])return;if(openSheet&&openSheet!==key)sheets[openSheet].classList.remove('show');openSheet=key;scrim.classList.add('show');sheets[key].classList.add('show');}
-  function sheetClose(){if(openSheet){sheets[openSheet].classList.remove('show');openSheet=null;}scrim.classList.remove('show');if(cwOpen)setTimeout(restoreCard,420);}
-  function openCardSheet(){moveCardToSheet();sheetOpen('card');}
+  function sheetClose(){if(openSheet){sheets[openSheet].classList.remove('show');openSheet=null;}scrim.classList.remove('show');}
+  function openCard(){moveCard();renderCardActivity();if(cardPage){cardPage.classList.add('show');document.body.style.overflow='hidden';}requestAnimationFrame(()=>{if(window.relayoutDeck)window.relayoutDeck();});}
+  function closeCard(){if(cardPage)cardPage.classList.remove('show');document.body.style.overflow='';setTimeout(restoreCard,350);}
   scrim.addEventListener('click',sheetClose);
   $$('.msheet-grip').forEach(g=>g.addEventListener('click',sheetClose));
 
@@ -2379,6 +2421,23 @@ $$('.m-bar i').forEach(b=>barObs.observe(b));
   }
   refreshHero();window.refreshMHero=refreshHero;
 
+  /* single-line activity widgets */
+  const ICO={
+    comm:'<svg viewBox="0 0 24 24" fill="none"><path d="M4 8h16v11H4z" stroke="currentColor" stroke-width="1.7"/><path d="M4 8l8-4 8 4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>',
+    adv:'<svg viewBox="0 0 24 24" fill="none"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>',
+    transfer:'<svg viewBox="0 0 24 24" fill="none"><path d="M7 7h11m0 0l-3-3m3 3l-3 3M17 17H6m0 0l3 3m-3-3l3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    card:'<svg viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12.5" rx="2.6" stroke="currentColor" stroke-width="1.7"/><path d="M3 10h18" stroke="currentColor" stroke-width="1.7"/></svg>'};
+  function typeMeta(t){if(t==='Commission')return{cls:'t-comm',ic:ICO.comm};if(t==='Advance')return{cls:'t-adv',ic:ICO.adv};if(t==='Transfer')return{cls:'t-transfer',ic:ICO.transfer};return{cls:'t-card',ic:ICO.card};}
+  function mavRow(o){return '<div class="mav-row"><span class="mav-dotslot">'+(o.attn?'<span class="d"></span>':'')+'</span><span class="mav-ic '+o.cls+'">'+o.ic+'</span><div class="mav-main"><div class="mav-desc">'+o.desc+'</div></div><div class="mav-amt '+(o.pos?'pos':'')+'">'+o.amt+'</div></div>';}
+  function mList(){const items=[];
+    if(typeof commTotal!=='undefined'&&commTotal>0)items.push({attn:true,cls:'t-comm',ic:ICO.comm,desc:'Commission ready · '+commissions.length+' deals',amt:'+'+money(commTotal),pos:true});
+    if(typeof preApprovedRequested!=='undefined'&&!preApprovedRequested)items.push({attn:true,cls:'t-adv',ic:ICO.adv,desc:preApproved.addr+' · Pre-approved',amt:money(preApproved.eligible),pos:true});
+    activity.forEach(a=>{const m=typeMeta(a.type);items.push({attn:false,cls:m.cls,ic:m.ic,desc:a.desc,amt:a.amt.replace('.00',''),pos:a.pos});});
+    return items;}
+  function renderMActivity(){const b=$('#mActBody');if(!b)return;b.innerHTML=mList().slice(0,5).map(mavRow).join('');}
+  function renderCardActivity(){const b=$('#cardActBody');if(!b)return;const rows=activity.filter(a=>a.type==='Card Purchase');b.innerHTML=rows.length?rows.map(a=>mavRow({attn:false,cls:'t-card',ic:ICO.card,desc:a.desc,amt:a.amt.replace('.00',''),pos:a.pos})).join(''):'<div class="mav-empty">No card activity yet</div>';}
+  renderMActivity();renderCardActivity();window.renderMActivity=renderMActivity;
+
   const clickEl=id=>{const e=$(id);if(e)e.click();};
   const mt=$('#mheadTitle');function setTitle(t){if(mt)mt.textContent=t;}
   const maR=$('#maReceive');if(maR)maR.addEventListener('click',()=>clickEl('#receiveBtn'));
@@ -2386,14 +2445,16 @@ $$('.m-bar i').forEach(b=>barObs.observe(b));
   const maA=$('#maAdvance');if(maA)maA.addEventListener('click',()=>clickEl('#reqAdvBtn'));
   const maM=$('#maMore');if(maM)maM.addEventListener('click',()=>sheetOpen('more'));
   const mCh=$('#mChartBtn');if(mCh)mCh.addEventListener('click',()=>sheetOpen('chart'));
-  const mCd=$('#mCardBtn');if(mCd)mCd.addEventListener('click',openCardSheet);
+  const mCd=$('#mCardBtn');if(mCd)mCd.addEventListener('click',openCard);
   const mBal=$('#mBalancesBtn');if(mBal)mBal.addEventListener('click',()=>sheetOpen('balances'));
   const mbR=$('#mbReceive');if(mbR)mbR.addEventListener('click',()=>{sheetClose();clickEl('#receiveBtn');});
   const mbA=$('#mbAdvance');if(mbA)mbA.addEventListener('click',()=>{sheetClose();clickEl('#reqAdvBtn');});
   const mmT=$('#mmTransferAdv');if(mmT)mmT.addEventListener('click',()=>{sheetClose();clickEl('#advTransferBtn');});
-  const mmC=$('#mmCard');if(mmC)mmC.addEventListener('click',()=>{sheets.more.classList.remove('show');openSheet=null;openCardSheet();});
+  const mmC=$('#mmCard');if(mmC)mmC.addEventListener('click',()=>{sheetClose();openCard();});
   const mmB=$('#mmBank');if(mmB)mmB.addEventListener('click',()=>{sheetClose();setTitle('Bank');go('bank');});
   const mmP=$('#mmPaper');if(mmP)mmP.addEventListener('click',()=>{sheetClose();clickEl('#paperBtn');});
+  const cB=$('#cardBack');if(cB)cB.addEventListener('click',closeCard);
+  const mvA=$('#mViewAllBtn');if(mvA)mvA.addEventListener('click',()=>clickEl('#viewAllBtn'));
 
   const titles={wallet:'Wallet',transfer:'Transfer',bank:'Bank'};
   document.addEventListener('click',e=>{const t=e.target.closest('[data-nav]');if(t&&titles[t.dataset.nav])setTitle(titles[t.dataset.nav]);});
